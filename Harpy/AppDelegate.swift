@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        KPersonService.findPersonBy(name: "erik", office: "") { (people) in
+            print("Received \(people.count) people")
+        }
+
         return true
     }
 
