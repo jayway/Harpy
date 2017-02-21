@@ -55,7 +55,13 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     }
     
     @IBAction func didPressSend(_ sender: Any) {
-        self.endWriting()
+        if let message = textEditor.text{
+            self.dataSource.addNewComment(message: message)
+            self.textEditor.text = ""
+            self.endWriting()
+            self.tableView.reloadData()
+        }
+        
     }
     
     private func startWriting(){
@@ -70,7 +76,6 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             self.sendButtonWidthConstraint.constant = 0
             self.textEditor.textAlignment = NSTextAlignment.center
         }
-        self.textEditor.text = ""
         self.view.endEditing(true)
     }
     
