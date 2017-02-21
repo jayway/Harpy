@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03E92A931E5C825200AC6E91 /* KPersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E92A921E5C825200AC6E91 /* KPersonService.swift */; };
 		F70FF5581E5C827000B4584E /* APIAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70FF5571E5C827000B4584E /* APIAIService.swift */; };
 		F70FF55D1E5C86D900B4584E /* CommentKPersonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70FF55C1E5C86D900B4584E /* CommentKPersonsTableViewCell.swift */; };
 		F72554461E5C5300000F88E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72554451E5C5300000F88E2 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03E92A921E5C825200AC6E91 /* KPersonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPersonService.swift; sourceTree = "<group>"; };
 		55236837D869416361FC8CF8 /* Pods-Harpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Harpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Harpy/Pods-Harpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A859A328ADBA51AE3E83E40D /* Pods-Harpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Harpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Harpy/Pods-Harpy.release.xcconfig"; sourceTree = "<group>"; };
 		C4233847C7D5B4B4438BF1A3 /* Pods_Harpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Harpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03E92A911E5C821700AC6E91 /* KPersonService */ = {
+			isa = PBXGroup;
+			children = (
+				03E92A921E5C825200AC6E91 /* KPersonService.swift */,
+			);
+			name = KPersonService;
+			sourceTree = "<group>";
+		};
 		12E7E6A72B27DBF4666E3AD1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 		F72554441E5C5300000F88E2 /* Harpy */ = {
 			isa = PBXGroup;
 			children = (
+				03E92A911E5C821700AC6E91 /* KPersonService */,
 				F72554451E5C5300000F88E2 /* AppDelegate.swift */,
 				F70FF5561E5C825500B4584E /* APIAIService */,
 				F72554751E5C5363000F88E2 /* Model */,
@@ -416,6 +427,7 @@
 				F72554461E5C5300000F88E2 /* AppDelegate.swift in Sources */,
 				F7B885811E5C73C8006985E2 /* KPerson.swift in Sources */,
 				F7B8857D1E5C67E3006985E2 /* HarpyDataSource.swift in Sources */,
+				03E92A931E5C825200AC6E91 /* KPersonService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
