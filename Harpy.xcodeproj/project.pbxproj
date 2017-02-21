@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03E92A931E5C825200AC6E91 /* KPersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E92A921E5C825200AC6E91 /* KPersonService.swift */; };
+		F70FF5581E5C827000B4584E /* APIAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70FF5571E5C827000B4584E /* APIAIService.swift */; };
 		F72554461E5C5300000F88E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72554451E5C5300000F88E2 /* AppDelegate.swift */; };
 		F72554481E5C5300000F88E2 /* HarpyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72554471E5C5300000F88E2 /* HarpyViewController.swift */; };
 		F725544B1E5C5300000F88E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72554491E5C5300000F88E2 /* Main.storyboard */; };
