@@ -1,0 +1,15 @@
+PODS:
+  - IBAnimatable (3.1.2)
+  - IHKeyboardAvoiding (3.7)
+
+DEPENDENCIES:
+  - IBAnimatable
+  - IHKeyboardAvoiding
+
+SPEC CHECKSUMS:
+  IBAnimatable: 26b74a72df9369d40faab97428477c246b9e42ba
+  IHKeyboardAvoiding: 4c852fae85667469307678c65f14f5cac8a7be92
+
+PODFILE CHECKSUM: 615756ad032da08798031a458908e1b3645239c2
+
+COCOAPODS: 1.2.0
