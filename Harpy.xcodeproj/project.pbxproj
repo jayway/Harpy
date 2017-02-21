@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F70FF5581E5C827000B4584E /* APIAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70FF5571E5C827000B4584E /* APIAIService.swift */; };
+		F70FF55D1E5C86D900B4584E /* CommentKPersonsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70FF55C1E5C86D900B4584E /* CommentKPersonsTableViewCell.swift */; };
 		F72554461E5C5300000F88E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72554451E5C5300000F88E2 /* AppDelegate.swift */; };
 		F72554481E5C5300000F88E2 /* HarpyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72554471E5C5300000F88E2 /* HarpyViewController.swift */; };
 		F725544B1E5C5300000F88E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72554491E5C5300000F88E2 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		C4233847C7D5B4B4438BF1A3 /* Pods_Harpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Harpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70FF5521E5C813C00B4584E /* Harpy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Harpy-Bridging-Header.h"; sourceTree = "<group>"; };
 		F70FF5571E5C827000B4584E /* APIAIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIAIService.swift; sourceTree = "<group>"; };
+		F70FF55C1E5C86D900B4584E /* CommentKPersonsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentKPersonsTableViewCell.swift; sourceTree = "<group>"; };
 		F72554421E5C5300000F88E2 /* Harpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72554451E5C5300000F88E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F72554471E5C5300000F88E2 /* HarpyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarpyViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				F72554471E5C5300000F88E2 /* HarpyViewController.swift */,
 				F7B8857A1E5C5A34006985E2 /* CommentTableViewCell.swift */,
+				F70FF55C1E5C86D900B4584E /* CommentKPersonsTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70FF55D1E5C86D900B4584E /* CommentKPersonsTableViewCell.swift in Sources */,
 				F7B8857F1E5C73A9006985E2 /* Comment.swift in Sources */,
 				F72554481E5C5300000F88E2 /* HarpyViewController.swift in Sources */,
 				F7B8857B1E5C5A34006985E2 /* CommentTableViewCell.swift in Sources */,
