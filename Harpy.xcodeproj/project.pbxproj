@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F72554461E5C5300000F88E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72554451E5C5300000F88E2 /* AppDelegate.swift */; };
+		F72554481E5C5300000F88E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72554471E5C5300000F88E2 /* ViewController.swift */; };
+		F725544B1E5C5300000F88E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72554491E5C5300000F88E2 /* Main.storyboard */; };
+		F725544D1E5C5300000F88E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F725544C1E5C5300000F88E2 /* Assets.xcassets */; };
+		F72554501E5C5300000F88E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F725544E1E5C5300000F88E2 /* LaunchScreen.storyboard */; };
+		F725545B1E5C5300000F88E2 /* HarpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725545A1E5C5300000F88E2 /* HarpyTests.swift */; };
+		F72554661E5C5300000F88E2 /* HarpyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72554651E5C5300000F88E2 /* HarpyUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F72554571E5C5300000F88E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F725543A1E5C5300000F88E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F72554411E5C5300000F88E2;
+			remoteInfo = Harpy;
+		};
+		F72554621E5C5300000F88E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F725543A1E5C5300000F88E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F72554411E5C5300000F88E2;
+			remoteInfo = Harpy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F72554421E5C5300000F88E2 /* Harpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F72554451E5C5300000F88E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F72554471E5C5300000F88E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F725544A1E5C5300000F88E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F725544C1E5C5300000F88E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F725544F1E5C5300000F88E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F72554511E5C5300000F88E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F72554561E5C5300000F88E2 /* HarpyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarpyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F725545A1E5C5300000F88E2 /* HarpyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarpyTests.swift; sourceTree = "<group>"; };
+		F725545C1E5C5300000F88E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F72554611E5C5300000F88E2 /* HarpyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HarpyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F72554651E5C5300000F88E2 /* HarpyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarpyUITests.swift; sourceTree = "<group>"; };
+		F72554671E5C5300000F88E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F725543F1E5C5300000F88E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F72554531E5C5300000F88E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F725545E1E5C5300000F88E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F72554391E5C5300000F88E2 = {
+			isa = PBXGroup;
+			children = (
+				F72554441E5C5300000F88E2 /* Harpy */,
+				F72554591E5C5300000F88E2 /* HarpyTests */,
+				F72554641E5C5300000F88E2 /* HarpyUITests */,
+				F72554431E5C5300000F88E2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F72554431E5C5300000F88E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F72554421E5C5300000F88E2 /* Harpy.app */,
+				F72554561E5C5300000F88E2 /* HarpyTests.xctest */,
+				F72554611E5C5300000F88E2 /* HarpyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F72554441E5C5300000F88E2 /* Harpy */ = {
+			isa = PBXGroup;
+			children = (
+				F72554451E5C5300000F88E2 /* AppDelegate.swift */,
+				F72554471E5C5300000F88E2 /* ViewController.swift */,
+				F72554491E5C5300000F88E2 /* Main.storyboard */,
+				F725544C1E5C5300000F88E2 /* Assets.xcassets */,
+				F725544E1E5C5300000F88E2 /* LaunchScreen.storyboard */,
+				F72554511E5C5300000F88E2 /* Info.plist */,
+			);
+			path = Harpy;
+			sourceTree = "<group>";
+		};
+		F72554591E5C5300000F88E2 /* HarpyTests */ = {
+			isa = PBXGroup;
+			children = (
+				F725545A1E5C5300000F88E2 /* HarpyTests.swift */,
+				F725545C1E5C5300000F88E2 /* Info.plist */,
+			);
+			path = HarpyTests;
+			sourceTree = "<group>";
+		};
+		F72554641E5C5300000F88E2 /* HarpyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F72554651E5C5300000F88E2 /* HarpyUITests.swift */,
+				F72554671E5C5300000F88E2 /* Info.plist */,
+			);
+			path = HarpyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F72554411E5C5300000F88E2 /* Harpy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F725546A1E5C5300000F88E2 /* Build configuration list for PBXNativeTarget "Harpy" */;
+			buildPhases = (
+				F725543E1E5C5300000F88E2 /* Sources */,
+				F725543F1E5C5300000F88E2 /* Frameworks */,
+				F72554401E5C5300000F88E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Harpy;
+			productName = Harpy;
+			productReference = F72554421E5C5300000F88E2 /* Harpy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F72554551E5C5300000F88E2 /* HarpyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F725546D1E5C5300000F88E2 /* Build configuration list for PBXNativeTarget "HarpyTests" */;
+			buildPhases = (
+				F72554521E5C5300000F88E2 /* Sources */,
+				F72554531E5C5300000F88E2 /* Frameworks */,
+				F72554541E5C5300000F88E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F72554581E5C5300000F88E2 /* PBXTargetDependency */,
+			);
+			name = HarpyTests;
+			productName = HarpyTests;
+			productReference = F72554561E5C5300000F88E2 /* HarpyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F72554601E5C5300000F88E2 /* HarpyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F72554701E5C5300000F88E2 /* Build configuration list for PBXNativeTarget "HarpyUITests" */;
+			buildPhases = (
+				F725545D1E5C5300000F88E2 /* Sources */,
+				F725545E1E5C5300000F88E2 /* Frameworks */,
+				F725545F1E5C5300000F88E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F72554631E5C5300000F88E2 /* PBXTargetDependency */,
+			);
+			name = HarpyUITests;
+			productName = HarpyUITests;
+			productReference = F72554611E5C5300000F88E2 /* HarpyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F725543A1E5C5300000F88E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Felix Hedlund";
+				TargetAttributes = {
+					F72554411E5C5300000F88E2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					F72554551E5C5300000F88E2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F72554411E5C5300000F88E2;
+					};
+					F72554601E5C5300000F88E2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F72554411E5C5300000F88E2;
+					};
+				};
+			};
+			buildConfigurationList = F725543D1E5C5300000F88E2 /* Build configuration list for PBXProject "Harpy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F72554391E5C5300000F88E2;
+			productRefGroup = F72554431E5C5300000F88E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F72554411E5C5300000F88E2 /* Harpy */,
+				F72554551E5C5300000F88E2 /* HarpyTests */,
+				F72554601E5C5300000F88E2 /* HarpyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F72554401E5C5300000F88E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F72554501E5C5300000F88E2 /* LaunchScreen.storyboard in Resources */,
+				F725544D1E5C5300000F88E2 /* Assets.xcassets in Resources */,
+				F725544B1E5C5300000F88E2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F72554541E5C5300000F88E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F725545F1E5C5300000F88E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F725543E1E5C5300000F88E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F72554481E5C5300000F88E2 /* ViewController.swift in Sources */,
+				F72554461E5C5300000F88E2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F72554521E5C5300000F88E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F725545B1E5C5300000F88E2 /* HarpyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F725545D1E5C5300000F88E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F72554661E5C5300000F88E2 /* HarpyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F72554581E5C5300000F88E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F72554411E5C5300000F88E2 /* Harpy */;
+			targetProxy = F72554571E5C5300000F88E2 /* PBXContainerItemProxy */;
+		};
+		F72554631E5C5300000F88E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F72554411E5C5300000F88E2 /* Harpy */;
+			targetProxy = F72554621E5C5300000F88E2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F72554491E5C5300000F88E2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F725544A1E5C5300000F88E2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F725544E1E5C5300000F88E2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F725544F1E5C5300000F88E2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F72554681E5C5300000F88E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F72554691E5C5300000F88E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F725546B1E5C5300000F88E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Harpy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayway.Harpy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F725546C1E5C5300000F88E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Harpy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayway.Harpy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F725546E1E5C5300000F88E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HarpyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayway.HarpyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Harpy.app/Harpy";
+			};
+			name = Debug;
+		};
+		F725546F1E5C5300000F88E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = HarpyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayway.HarpyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Harpy.app/Harpy";
+			};
+			name = Release;
+		};
+		F72554711E5C5300000F88E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = HarpyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayway.HarpyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Harpy;
+			};
+			name = Debug;
+		};
+		F72554721E5C5300000F88E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = HarpyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayway.HarpyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Harpy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F725543D1E5C5300000F88E2 /* Build configuration list for PBXProject "Harpy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F72554681E5C5300000F88E2 /* Debug */,
+				F72554691E5C5300000F88E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F725546A1E5C5300000F88E2 /* Build configuration list for PBXNativeTarget "Harpy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F725546B1E5C5300000F88E2 /* Debug */,
+				F725546C1E5C5300000F88E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F725546D1E5C5300000F88E2 /* Build configuration list for PBXNativeTarget "HarpyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F725546E1E5C5300000F88E2 /* Debug */,
+				F725546F1E5C5300000F88E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F72554701E5C5300000F88E2 /* Build configuration list for PBXNativeTarget "HarpyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F72554711E5C5300000F88E2 /* Debug */,
+				F72554721E5C5300000F88E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F725543A1E5C5300000F88E2 /* Project object */;
+}
