@@ -8,7 +8,7 @@
 
 import UIKit
 import IBAnimatable
-class CommentKPersonsTableViewCell: UITableViewCell {
+class CommentKPersonsTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var commentLabel: AnimatableLabel!
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -17,6 +17,7 @@ class CommentKPersonsTableViewCell: UITableViewCell {
     func setupCell(comment: String, kPersons: [KPerson]){
         self.kPersons = kPersons
         self.commentLabel.text = comment
+        self.collectionView.reloadData()
     }
     
     
@@ -29,6 +30,18 @@ class CommentKPersonsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return kPersons.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "KPerson", for: indexPath) as! KPersonCollectionViewCell
+        let kPerson = kPersons[indexPath.row]
+        cell.nameLabel.text = kPerson.name
+        cell.officeLabel.text = kPerson.office
+        return cell
     }
 
 }

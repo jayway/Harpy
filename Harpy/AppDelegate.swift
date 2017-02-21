@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KPersonService.findPersonBy(name: "erik", office: "") { (people) in
             print("Received \(people.count) people")
         }
+        self.apiAI = ApiAI()
+        let configuration = AIDefaultConfiguration()
+        configuration.clientAccessToken = "95e83622de3043ce92e729dfc7d91797"
+        self.apiAI!.configuration = configuration
 
         return true
     }

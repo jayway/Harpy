@@ -130,14 +130,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentKPersons" rowHeight="200" id="S1K-I3-el8" customClass="CommentKPersonsTableViewCell" customModule="Harpy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="168" width="375" height="200"/>
+                                        <rect key="frame" x="0.0" y="168" width="320" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S1K-I3-el8" id="rK9-IG-cRb">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlI-Hb-Wqb" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="8" y="12" width="242" height="36"/>
+                                                    <rect key="frame" x="8" y="12" width="205.5" height="36"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -146,18 +146,18 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9o9-ja-8ZP" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="16" y="16" width="226" height="28"/>
+                                                    <rect key="frame" x="16" y="16" width="189.5" height="28"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ur7-IZ-5vE" userLabel="BreakView">
-                                                    <rect key="frame" x="242" y="0.0" width="125" height="200"/>
+                                                    <rect key="frame" x="205.5" y="0.0" width="106.5" height="200"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aY3-Mv-KAW">
-                                                    <rect key="frame" x="9" y="56" width="350" height="128"/>
+                                                    <rect key="frame" x="9" y="56" width="295" height="128"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="128" id="Jc5-CN-LBp"/>
@@ -169,16 +169,46 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pft-l7-8zY">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KPerson" id="pft-l7-8zY" customClass="KPersonCollectionViewCell" customModule="Harpy" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1ya-5x-plD">
+                                                                        <rect key="frame" x="16" y="19" width="68" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cSL-ZY-ZvZ">
+                                                                        <rect key="frame" x="16" y="48" width="68" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                             </view>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="cSL-ZY-ZvZ" secondAttribute="trailing" constant="8" id="1ZF-yW-pxd"/>
+                                                                <constraint firstItem="cSL-ZY-ZvZ" firstAttribute="leading" secondItem="pft-l7-8zY" secondAttribute="leadingMargin" constant="8" id="4xL-TG-l6H"/>
+                                                                <constraint firstItem="1ya-5x-plD" firstAttribute="top" secondItem="pft-l7-8zY" secondAttribute="topMargin" constant="11" id="Vbs-VV-AI1"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="1ya-5x-plD" secondAttribute="trailing" constant="8" id="WGG-6a-pYM"/>
+                                                                <constraint firstItem="1ya-5x-plD" firstAttribute="leading" secondItem="pft-l7-8zY" secondAttribute="leadingMargin" constant="8" id="mx3-NB-L8e"/>
+                                                                <constraint firstItem="cSL-ZY-ZvZ" firstAttribute="top" secondItem="1ya-5x-plD" secondAttribute="bottom" constant="8" id="rjd-iF-pyD"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="nameLabel" destination="1ya-5x-plD" id="Ijv-He-CaB"/>
+                                                                <outlet property="officeLabel" destination="cSL-ZY-ZvZ" id="ZvI-ad-HDL"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="S1K-I3-el8" id="fSe-F4-er9"/>
+                                                        <outlet property="delegate" destination="S1K-I3-el8" id="cPK-Y6-QVU"/>
+                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -203,7 +233,6 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="collectionView" destination="aY3-Mv-KAW" id="IBX-p2-PLG"/>
-                                            <outlet property="commentBackground" destination="KlI-Hb-Wqb" id="uXk-Iy-wiF"/>
                                             <outlet property="commentLabel" destination="9o9-ja-8ZP" id="Zmg-KF-5QV"/>
                                         </connections>
                                     </tableViewCell>

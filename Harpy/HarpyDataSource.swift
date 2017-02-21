@@ -18,4 +18,8 @@ class HarpyDataSource{
     func addNewComment(message: String){
         comments.append(Comment(date: Date(), commentString: message, kPersons: nil, isServerResponse: false))
     }
+    
+    func addNewCommentObject(comment: Comment){
+        comments.append(comment)
+    }
 }

@@ -14,8 +14,8 @@ class KPersonService {
     static let endpoint = "http://e3456c5e.ngrok.io/find_person"
     
     
-    static func findPersonBy(name: String, office: String, successHandler: @escaping ([KPerson]) -> Void)  {
-        let requestURL = URL(string: "\(endpoint)?name=\(name)&\(office)")!
+    static func findPersonBy(name: String?, office: String?, successHandler: @escaping ([KPerson]) -> Void)  {
+        let requestURL = URL(string: "\(endpoint)?name=\(name ?? "")&office=\(office ?? "")")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
         
         let session = URLSession.shared

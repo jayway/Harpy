@@ -61,8 +61,10 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             self.textEditor.text = ""
             self.endWriting()
             self.tableView.reloadData()
-            apiService.performTextRequest(message: message, success: {
-                
+            
+            apiService.performTextRequest(message: message, success: { (comment) in
+                self.dataSource.addNewCommentObject(comment: comment)
+                self.tableView.reloadData()
             }, failure: {
                 
             })

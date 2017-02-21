@@ -18,6 +18,7 @@
 		F725545B1E5C5300000F88E2 /* HarpyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F725545A1E5C5300000F88E2 /* HarpyTests.swift */; };
 		F72554661E5C5300000F88E2 /* HarpyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72554651E5C5300000F88E2 /* HarpyUITests.swift */; };
 		F725547B1E5C5570000F88E2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F725547A1E5C5570000F88E2 /* Podfile */; };
+		F777594E1E5C900800D08CF6 /* KPersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F777594D1E5C900800D08CF6 /* KPersonCollectionViewCell.swift */; };
 		F7B8857B1E5C5A34006985E2 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8857A1E5C5A34006985E2 /* CommentTableViewCell.swift */; };
 		F7B8857D1E5C67E3006985E2 /* HarpyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8857C1E5C67E3006985E2 /* HarpyDataSource.swift */; };
 		F7B8857F1E5C73A9006985E2 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8857E1E5C73A9006985E2 /* Comment.swift */; };
@@ -64,6 +65,7 @@
 		F72554651E5C5300000F88E2 /* HarpyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarpyUITests.swift; sourceTree = "<group>"; };
 		F72554671E5C5300000F88E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F725547A1E5C5570000F88E2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F777594D1E5C900800D08CF6 /* KPersonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPersonCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7B8857A1E5C5A34006985E2 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		F7B8857C1E5C67E3006985E2 /* HarpyDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarpyDataSource.swift; sourceTree = "<group>"; };
 		F7B8857E1E5C73A9006985E2 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				F72554471E5C5300000F88E2 /* HarpyViewController.swift */,
 				F7B8857A1E5C5A34006985E2 /* CommentTableViewCell.swift */,
 				F70FF55C1E5C86D900B4584E /* CommentKPersonsTableViewCell.swift */,
+				F777594D1E5C900800D08CF6 /* KPersonCollectionViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				F70FF5581E5C827000B4584E /* APIAIService.swift in Sources */,
 				F72554461E5C5300000F88E2 /* AppDelegate.swift in Sources */,
 				F7B885811E5C73C8006985E2 /* KPerson.swift in Sources */,
+				F777594E1E5C900800D08CF6 /* KPersonCollectionViewCell.swift in Sources */,
 				F7B8857D1E5C67E3006985E2 /* HarpyDataSource.swift in Sources */,
 				03E92A931E5C825200AC6E91 /* KPersonService.swift in Sources */,
 			);
