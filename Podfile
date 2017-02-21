@@ -6,6 +6,7 @@ use_frameworks!
 target 'Harpy' do
 pod 'IHKeyboardAvoiding'
 pod 'IBAnimatable'
+pod 'ApiAI'
 end
 
 post_install do |installer|
