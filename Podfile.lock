@@ -1,15 +1,42 @@
 PODS:
+  - ApiAI (0.7.0):
+    - ApiAI/AudioFileConverter (= 0.7.0)
+    - ApiAI/Core (= 0.7.0)
+    - ApiAI/Events (= 0.7.0)
+    - ApiAI/ResponseMapping (= 0.7.0)
+    - ApiAI/UIKit (= 0.7.0)
+    - ApiAI/UserEntities (= 0.7.0)
+    - ApiAI/VoiceFileRequest (= 0.7.0)
+    - ApiAI/VoiceRequest (= 0.7.0)
+  - ApiAI/AudioFileConverter (0.7.0):
+    - ApiAI/Core
+  - ApiAI/Core (0.7.0)
+  - ApiAI/Events (0.7.0):
+    - ApiAI/Core
+  - ApiAI/ResponseMapping (0.7.0):
+    - ApiAI/Core
+  - ApiAI/UIKit (0.7.0):
+    - ApiAI/Core
+    - ApiAI/VoiceRequest
+  - ApiAI/UserEntities (0.7.0):
+    - ApiAI/Core
+  - ApiAI/VoiceFileRequest (0.7.0):
+    - ApiAI/Core
+  - ApiAI/VoiceRequest (0.7.0):
+    - ApiAI/Core
   - IBAnimatable (3.1.2)
   - IHKeyboardAvoiding (3.7)
 
 DEPENDENCIES:
+  - ApiAI
   - IBAnimatable
   - IHKeyboardAvoiding
 
 SPEC CHECKSUMS:
+  ApiAI: 25f763ddd88139dc5fe6794a905300244190d168
   IBAnimatable: 26b74a72df9369d40faab97428477c246b9e42ba
   IHKeyboardAvoiding: 4c852fae85667469307678c65f14f5cac8a7be92
 
-PODFILE CHECKSUM: 615756ad032da08798031a458908e1b3645239c2
+PODFILE CHECKSUM: 4413492b19ef348db32a3cc4fae47670ed2f5207
 
 COCOAPODS: 1.2.0

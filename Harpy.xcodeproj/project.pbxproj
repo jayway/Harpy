@@ -45,6 +45,8 @@
 		55236837D869416361FC8CF8 /* Pods-Harpy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Harpy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Harpy/Pods-Harpy.debug.xcconfig"; sourceTree = "<group>"; };
 		A859A328ADBA51AE3E83E40D /* Pods-Harpy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Harpy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Harpy/Pods-Harpy.release.xcconfig"; sourceTree = "<group>"; };
 		C4233847C7D5B4B4438BF1A3 /* Pods_Harpy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Harpy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F70FF5521E5C813C00B4584E /* Harpy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Harpy-Bridging-Header.h"; sourceTree = "<group>"; };
+		F70FF5571E5C827000B4584E /* APIAIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIAIService.swift; sourceTree = "<group>"; };
 		F72554421E5C5300000F88E2 /* Harpy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Harpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F72554451E5C5300000F88E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F72554471E5C5300000F88E2 /* HarpyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarpyViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F70FF5561E5C825500B4584E /* APIAIService */ = {
+			isa = PBXGroup;
+			children = (
+				F70FF5571E5C827000B4584E /* APIAIService.swift */,
+			);
+			name = APIAIService;
+			sourceTree = "<group>";
+		};
 		F72554391E5C5300000F88E2 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 			children = (
 				03E92A911E5C821700AC6E91 /* KPersonService */,
 				F72554451E5C5300000F88E2 /* AppDelegate.swift */,
+				F70FF5561E5C825500B4584E /* APIAIService */,
 				F72554751E5C5363000F88E2 /* Model */,
 				F72554731E5C5350000F88E2 /* View */,
 				F72554741E5C535A000F88E2 /* Controller */,
@@ -209,6 +220,7 @@
 		F72554771E5C552F000F88E2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F70FF5521E5C813C00B4584E /* Harpy-Bridging-Header.h */,
 				F72554511E5C5300000F88E2 /* Info.plist */,
 				F725547A1E5C5570000F88E2 /* Podfile */,
 			);
@@ -287,6 +299,7 @@
 					F72554411E5C5300000F88E2 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 7XT7RQW894;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					F72554551E5C5300000F88E2 = {
@@ -405,6 +418,7 @@
 				F7B8857F1E5C73A9006985E2 /* Comment.swift in Sources */,
 				F72554481E5C5300000F88E2 /* HarpyViewController.swift in Sources */,
 				F7B8857B1E5C5A34006985E2 /* CommentTableViewCell.swift in Sources */,
+				F70FF5581E5C827000B4584E /* APIAIService.swift in Sources */,
 				F72554461E5C5300000F88E2 /* AppDelegate.swift in Sources */,
 				F7B885811E5C73C8006985E2 /* KPerson.swift in Sources */,
 				F7B8857D1E5C67E3006985E2 /* HarpyDataSource.swift in Sources */,
@@ -561,12 +575,15 @@
 			baseConfigurationReference = 55236837D869416361FC8CF8 /* Pods-Harpy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7XT7RQW894;
 				INFOPLIST_FILE = Harpy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jayway.Harpy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Harpy/Harpy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -576,12 +593,14 @@
 			baseConfigurationReference = A859A328ADBA51AE3E83E40D /* Pods-Harpy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7XT7RQW894;
 				INFOPLIST_FILE = Harpy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jayway.Harpy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Harpy/Harpy-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

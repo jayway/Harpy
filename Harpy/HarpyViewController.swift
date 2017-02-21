@@ -16,11 +16,12 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var inputContainerBottomConstraint: NSLayoutConstraint!
     
     var dataSource: HarpyDataSource!
+    var apiService: APIAIService!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         dataSource = HarpyDataSource()
-        
+        apiService = APIAIService()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
         
@@ -55,7 +56,18 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     }
     
     @IBAction func didPressSend(_ sender: Any) {
-        self.endWriting()
+        if let message = textEditor.text{
+            self.dataSource.addNewComment(message: message)
+            self.textEditor.text = ""
+            self.endWriting()
+            self.tableView.reloadData()
+            apiService.performTextRequest(message: message, success: {
+                
+            }, failure: {
+                
+            })
+        }
+        
     }
     
     private func startWriting(){
@@ -70,7 +82,6 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             self.sendButtonWidthConstraint.constant = 0
             self.textEditor.textAlignment = NSTextAlignment.center
         }
-        self.textEditor.text = ""
         self.view.endEditing(true)
     }
     
