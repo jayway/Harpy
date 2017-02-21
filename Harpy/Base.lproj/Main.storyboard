@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -88,7 +87,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOG-tb-dad" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="8" y="20.5" width="205.5" height="29"/>
+                                                    <rect key="frame" x="8" y="20.5" width="60" height="29"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -97,30 +96,22 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xru-Ry-iSm" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="16" y="24.5" width="189.5" height="21"/>
+                                                    <rect key="frame" x="16" y="24.5" width="44" height="21"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QwN-bN-8Ga" userLabel="BreakView">
-                                                    <rect key="frame" x="205.5" y="0.0" width="106.5" height="70"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="QwN-bN-8Ga" firstAttribute="height" secondItem="DsH-la-2nB" secondAttribute="height" id="3Zc-vq-b1o"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Xru-Ry-iSm" secondAttribute="trailing" constant="8" id="1lf-SQ-tAz"/>
                                                 <constraint firstItem="Xru-Ry-iSm" firstAttribute="centerY" secondItem="DsH-la-2nB" secondAttribute="centerY" id="44r-Rp-ecw"/>
-                                                <constraint firstItem="QwN-bN-8Ga" firstAttribute="width" secondItem="DsH-la-2nB" secondAttribute="width" multiplier="1:3" id="4xb-sg-Q90"/>
                                                 <constraint firstItem="QOG-tb-dad" firstAttribute="bottom" secondItem="Xru-Ry-iSm" secondAttribute="bottom" constant="4" id="8MQ-XW-KWH"/>
                                                 <constraint firstItem="Xru-Ry-iSm" firstAttribute="leading" secondItem="DsH-la-2nB" secondAttribute="leadingMargin" constant="8" id="FCW-8R-LhQ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="QwN-bN-8Ga" secondAttribute="trailing" id="Iba-1o-BHa"/>
                                                 <constraint firstItem="QOG-tb-dad" firstAttribute="leading" secondItem="Xru-Ry-iSm" secondAttribute="leading" constant="-8" id="MPg-Te-bV7"/>
                                                 <constraint firstItem="QOG-tb-dad" firstAttribute="trailing" secondItem="Xru-Ry-iSm" secondAttribute="trailing" constant="8" id="VdW-HS-nQ3"/>
-                                                <constraint firstItem="Xru-Ry-iSm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QwN-bN-8Ga" secondAttribute="leading" id="cqN-P7-Uoe"/>
                                                 <constraint firstItem="QOG-tb-dad" firstAttribute="top" secondItem="Xru-Ry-iSm" secondAttribute="top" constant="-4" id="keY-Kf-NRM"/>
-                                                <constraint firstItem="QwN-bN-8Ga" firstAttribute="centerY" secondItem="DsH-la-2nB" secondAttribute="centerY" id="nc0-AL-X0v"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -137,7 +128,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlI-Hb-Wqb" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="8" y="12" width="205.5" height="36"/>
+                                                    <rect key="frame" x="8" y="12" width="60" height="36"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -146,16 +137,12 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9o9-ja-8ZP" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="16" y="16" width="189.5" height="28"/>
+                                                    <rect key="frame" x="16" y="16" width="44" height="28"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ur7-IZ-5vE" userLabel="BreakView">
-                                                    <rect key="frame" x="205.5" y="0.0" width="106.5" height="200"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aY3-Mv-KAW">
                                                     <rect key="frame" x="9" y="56" width="295" height="128"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -213,21 +200,17 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="9o9-ja-8ZP" secondAttribute="trailing" constant="8" id="1C1-Ft-xXn"/>
                                                 <constraint firstItem="KlI-Hb-Wqb" firstAttribute="bottom" secondItem="9o9-ja-8ZP" secondAttribute="bottom" constant="4" id="9Nw-L0-W2V"/>
                                                 <constraint firstItem="aY3-Mv-KAW" firstAttribute="leading" secondItem="rK9-IG-cRb" secondAttribute="leadingMargin" constant="1" id="JNg-hX-0Af"/>
                                                 <constraint firstItem="KlI-Hb-Wqb" firstAttribute="trailing" secondItem="9o9-ja-8ZP" secondAttribute="trailing" constant="8" id="SiX-OG-lka"/>
-                                                <constraint firstItem="Ur7-IZ-5vE" firstAttribute="centerY" secondItem="rK9-IG-cRb" secondAttribute="centerY" id="Ukh-pL-Cin"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="aY3-Mv-KAW" secondAttribute="bottom" constant="8" id="bPL-o1-TZA"/>
-                                                <constraint firstItem="Ur7-IZ-5vE" firstAttribute="width" secondItem="rK9-IG-cRb" secondAttribute="width" multiplier="1:3" id="bmO-Y3-KAl"/>
                                                 <constraint firstItem="KlI-Hb-Wqb" firstAttribute="leading" secondItem="9o9-ja-8ZP" secondAttribute="leading" constant="-8" id="cBA-ke-I7r"/>
-                                                <constraint firstItem="9o9-ja-8ZP" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ur7-IZ-5vE" secondAttribute="leading" id="eh5-lS-H1H"/>
                                                 <constraint firstItem="aY3-Mv-KAW" firstAttribute="top" secondItem="KlI-Hb-Wqb" secondAttribute="bottom" constant="8" id="hQh-4f-Rfe"/>
                                                 <constraint firstItem="KlI-Hb-Wqb" firstAttribute="top" secondItem="9o9-ja-8ZP" secondAttribute="top" constant="-4" id="lw2-dm-OvN"/>
                                                 <constraint firstItem="9o9-ja-8ZP" firstAttribute="leading" secondItem="rK9-IG-cRb" secondAttribute="leadingMargin" constant="8" id="myV-RH-JqQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aY3-Mv-KAW" secondAttribute="trailing" constant="8" id="rl5-Xm-Q6e"/>
                                                 <constraint firstItem="9o9-ja-8ZP" firstAttribute="top" secondItem="rK9-IG-cRb" secondAttribute="topMargin" constant="8" id="tY7-II-7qZ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Ur7-IZ-5vE" secondAttribute="trailing" id="v4W-sT-efH"/>
-                                                <constraint firstItem="Ur7-IZ-5vE" firstAttribute="height" secondItem="rK9-IG-cRb" secondAttribute="height" id="xmI-LA-7vM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

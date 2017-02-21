@@ -57,19 +57,20 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     @IBAction func didPressSend(_ sender: Any) {
         if let message = textEditor.text{
-            self.dataSource.addNewComment(message: message)
-            self.textEditor.text = ""
-            self.endWriting()
-            self.tableView.reloadData()
-            
-            apiService.performTextRequest(message: message, success: { (comment) in
-                self.dataSource.addNewCommentObject(comment: comment)
+            if message != ""{
+                self.dataSource.addNewComment(message: message)
+                self.textEditor.text = ""
+                self.endWriting()
                 self.tableView.reloadData()
-            }, failure: {
                 
-            })
+                apiService.performTextRequest(message: message, success: { (comment) in
+                    self.dataSource.addNewCommentObject(comment: comment)
+                    self.tableView.reloadData()
+                }, failure: {
+                    
+                })
+            }
         }
-        
     }
     
     private func startWriting(){
