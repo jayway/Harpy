@@ -29,7 +29,7 @@ class APIAIService{
                     commentString = message
                 }
                 DispatchQueue.main.async {
-                    success(Comment(date: Date(), commentString: commentString, isServerResponse: true))
+                    success(Comment(date: Date(), commentString: commentString, isServerResponse: true, isBankIdRequest: params.isBankIdRequest))
                 }
             }
         }, failure: { (request, error) in
@@ -39,11 +39,12 @@ class APIAIService{
         
     }
     
-    private func getParamsFromJSON(json: [String:Any]) -> (name: String?, office: String?, message: String?){
+    private func getParamsFromJSON(json: [String:Any]) -> (name: String?, office: String?, message: String?, isBankIdRequest: Bool?){
         var message: String?
         //TODO: get office
         var office: String?
         var name: String?
+        var isBankIdRequest: Bool?
         if let result = json["result"] as? [String:Any]{
             if let fulfillment = result["fulfillment"] as? [String:Any]{
                 if let speech = fulfillment["speech"] as? String{
@@ -59,15 +60,11 @@ class APIAIService{
                 }
                 if let action = result["action"] as? String{
                     if action == "bankid_block" {
-                        self.startBankId()
+                        isBankIdRequest = true
                     }
                 }
             }
         }
-        return (name: name, office: office, message: message)
-    }
-    
-    private func startBankId() {
-        print("---starting bank Id -----")
+        return (name: name, office: office, message: message, isBankIdRequest: isBankIdRequest)
     }
 }

@@ -12,11 +12,13 @@ class Comment: NSObject{
     var date: Date!
     var commentString: String!
     var isServerResponse = false
-    init(date: Date, commentString: String, isServerResponse: Bool){
+    var isBankIdRequest = false
+    init(date: Date, commentString: String, isServerResponse: Bool, isBankIdRequest: Bool?){
         super.init()
         self.date = date
         self.commentString = commentString
         self.isServerResponse = isServerResponse
+        self.isBankIdRequest = isBankIdRequest ?? false
     }
     
 }
