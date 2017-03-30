@@ -26,10 +26,17 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         tableView.estimatedRowHeight = 44
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChangeFrameNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(openBankID))
+        view.addGestureRecognizer(swipe)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func openBankID() {
+        UIApplication.shared.openURL(URL(string: "http://mayholm.com/bankid/mock")!)
     }
 
     override func didReceiveMemoryWarning() {
