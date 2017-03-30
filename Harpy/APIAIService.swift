@@ -57,9 +57,17 @@ class APIAIService{
                 if let c = parameters["city"] as? String{
                     office = c
                 }
+                if let action = result["action"] as? String{
+                    if action == "bankid_block" {
+                        self.startBankId()
+                    }
+                }
             }
         }
         return (name: name, office: office, message: message)
     }
     
+    private func startBankId() {
+        print("---starting bank Id -----")
+    }
 }

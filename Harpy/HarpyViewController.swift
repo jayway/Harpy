@@ -66,6 +66,8 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 apiService.performTextRequest(message: message, success: { (comment) in
                     self.dataSource.addNewCommentObject(comment: comment)
                     self.tableView.reloadData()
+                    let lastItem = IndexPath(item: self.dataSource.comments.count - 1, section: 0)
+                    self.tableView.scrollToRow(at: lastItem, at: .bottom, animated: true)
                 }, failure: {
                     
                 })
