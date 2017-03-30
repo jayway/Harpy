@@ -34,7 +34,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingvar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBt-Pj-PYu">
-                                        <rect key="frame" x="135" y="42" width="51" height="22"/>
+                                        <rect key="frame" x="134.5" y="42" width="51.5" height="22"/>
                                         <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
                                         <color key="textColor" red="0.20392156862745098" green="0.20784313725490194" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -85,11 +85,12 @@
                                             <constraints>
                                                 <constraint firstItem="mcO-6Q-oRa" firstAttribute="bottom" secondItem="a1L-3E-hBY" secondAttribute="bottom" constant="12" id="D3e-2K-g5G"/>
                                                 <constraint firstItem="mcO-6Q-oRa" firstAttribute="top" secondItem="a1L-3E-hBY" secondAttribute="top" constant="-12" id="DpA-5M-pne"/>
-                                                <constraint firstItem="a1L-3E-hBY" firstAttribute="centerY" secondItem="uR5-VS-4rJ" secondAttribute="centerY" id="NIy-zv-vjf"/>
                                                 <constraint firstItem="a1L-3E-hBY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uR5-VS-4rJ" secondAttribute="leadingMargin" constant="16" id="QbK-IP-hf8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="a1L-3E-hBY" secondAttribute="trailing" constant="16" id="Wq7-jl-q6H"/>
                                                 <constraint firstItem="mcO-6Q-oRa" firstAttribute="trailing" secondItem="a1L-3E-hBY" secondAttribute="trailing" constant="12" id="byC-1f-LYd"/>
                                                 <constraint firstItem="mcO-6Q-oRa" firstAttribute="leading" secondItem="a1L-3E-hBY" secondAttribute="leading" constant="-12" id="oBj-c6-wIy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="a1L-3E-hBY" secondAttribute="bottom" constant="16" id="q0p-tN-4yW"/>
+                                                <constraint firstItem="a1L-3E-hBY" firstAttribute="top" secondItem="uR5-VS-4rJ" secondAttribute="topMargin" constant="16" id="yqj-8y-FEC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -178,6 +179,106 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="pageControl" destination="Dsv-yY-esk" id="Y13-mq-LLQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BankIDActionCell" rowHeight="140" id="Eha-Rf-s9h" customClass="BankIDActionTableViewCell" customModule="Harpy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="238" width="320" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Eha-Rf-s9h" id="vhs-gg-xTH">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4p7-It-Mr8" customClass="AnimatableView" customModule="IBAnimatable">
+                                                    <rect key="frame" x="12" y="12.5" width="69.5" height="67"/>
+                                                    <color key="backgroundColor" red="0.94117647059999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_cornerSides" value="bottomLeft, bottomRight, topRight"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esi-s6-iTF" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="24" y="24.5" width="45.5" height="43"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="IkanoSans-Light" family="Ikano Sans" pointSize="17"/>
+                                                    <color key="textColor" red="0.20392156859999999" green="0.20784313730000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7G-Bw-Y3N" customClass="AnimatableButton" customModule="IBAnimatable">
+                                                    <rect key="frame" x="12" y="83.5" width="188" height="44"/>
+                                                    <color key="backgroundColor" red="0.94117647059999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_cornerSides" value="bottomLeft, bottomRight, topRight"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="didPressOpenBankID:" destination="Eha-Rf-s9h" eventType="touchUpInside" id="gwP-0j-i72"/>
+                                                        <action selector="didTouchCancel:" destination="Eha-Rf-s9h" eventType="touchDragOutside" id="43i-AR-Tk1"/>
+                                                        <action selector="didTouchCancel:" destination="Eha-Rf-s9h" eventType="touchCancel" id="DhM-ul-EEi"/>
+                                                        <action selector="didTouchCancel:" destination="Eha-Rf-s9h" eventType="touchUpOutside" id="qrA-SY-p4l"/>
+                                                        <action selector="didTouchDown:" destination="Eha-Rf-s9h" eventType="touchDown" id="7Lo-Pk-lV9"/>
+                                                    </connections>
+                                                </button>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-eQ-Cn8" userLabel="BankIdButtonContainer" customClass="AnimatableView" customModule="IBAnimatable">
+                                                    <rect key="frame" x="12" y="83.5" width="188" height="44"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open BankID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-n1-M2v" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                            <rect key="frame" x="38" y="11.5" width="106.5" height="22"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
+                                                            <color key="textColor" red="0.20392156859999999" green="0.20784313730000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1n-3P-AUC" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                            <rect key="frame" x="163" y="6.5" width="13" height="32.5"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="25"/>
+                                                            <color key="textColor" red="0.92549019610000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="7E7-n1-M2v" firstAttribute="centerY" secondItem="v0A-eQ-Cn8" secondAttribute="centerY" id="62k-rV-6Rr"/>
+                                                        <constraint firstItem="s1n-3P-AUC" firstAttribute="centerY" secondItem="v0A-eQ-Cn8" secondAttribute="centerY" id="9lW-Yb-chU"/>
+                                                        <constraint firstAttribute="height" constant="44" id="Jk0-uV-JbL"/>
+                                                        <constraint firstItem="7E7-n1-M2v" firstAttribute="leading" secondItem="v0A-eQ-Cn8" secondAttribute="leading" constant="38" id="TBQ-1O-peA"/>
+                                                        <constraint firstAttribute="width" constant="188" id="atq-Pm-Shn"/>
+                                                        <constraint firstAttribute="trailing" secondItem="s1n-3P-AUC" secondAttribute="trailing" constant="12" id="ef3-0m-8B4"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_cornerSides" value="bottomLeft, bottomRight, topRight"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="Esi-s6-iTF" firstAttribute="bottom" secondItem="v0A-eQ-Cn8" secondAttribute="top" constant="-16" id="0hZ-gA-HAY"/>
+                                                <constraint firstItem="4p7-It-Mr8" firstAttribute="trailing" secondItem="Esi-s6-iTF" secondAttribute="trailing" constant="12" id="3bT-Bp-Yku"/>
+                                                <constraint firstItem="U7G-Bw-Y3N" firstAttribute="centerX" secondItem="v0A-eQ-Cn8" secondAttribute="centerX" id="6EJ-gw-ZOo"/>
+                                                <constraint firstItem="4p7-It-Mr8" firstAttribute="top" secondItem="Esi-s6-iTF" secondAttribute="top" constant="-12" id="8mc-j3-YYA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="v0A-eQ-Cn8" secondAttribute="bottom" constant="4" id="MTI-bd-omP"/>
+                                                <constraint firstItem="U7G-Bw-Y3N" firstAttribute="height" secondItem="v0A-eQ-Cn8" secondAttribute="height" id="NWz-e6-mbY"/>
+                                                <constraint firstItem="v0A-eQ-Cn8" firstAttribute="leading" secondItem="vhs-gg-xTH" secondAttribute="leadingMargin" constant="4" id="P7r-yY-ElO"/>
+                                                <constraint firstItem="U7G-Bw-Y3N" firstAttribute="width" secondItem="v0A-eQ-Cn8" secondAttribute="width" id="PiB-0x-rzW"/>
+                                                <constraint firstItem="4p7-It-Mr8" firstAttribute="leading" secondItem="Esi-s6-iTF" secondAttribute="leading" constant="-12" id="RDD-FY-olZ"/>
+                                                <constraint firstItem="Esi-s6-iTF" firstAttribute="leading" secondItem="vhs-gg-xTH" secondAttribute="leadingMargin" constant="16" id="RTo-jj-7Sc"/>
+                                                <constraint firstItem="U7G-Bw-Y3N" firstAttribute="centerY" secondItem="v0A-eQ-Cn8" secondAttribute="centerY" id="Wua-8a-7q9"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Esi-s6-iTF" secondAttribute="trailing" constant="16" id="eyE-Yg-aZB"/>
+                                                <constraint firstItem="Esi-s6-iTF" firstAttribute="top" secondItem="vhs-gg-xTH" secondAttribute="topMargin" constant="16.5" id="hAG-Ww-t8o"/>
+                                                <constraint firstItem="4p7-It-Mr8" firstAttribute="bottom" secondItem="Esi-s6-iTF" secondAttribute="bottom" constant="12" id="yIj-EH-P6I"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="button" destination="U7G-Bw-Y3N" id="jbN-3b-pmO"/>
+                                            <outlet property="messageLabel" destination="Esi-s6-iTF" id="Wsz-1P-afI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

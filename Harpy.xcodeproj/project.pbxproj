@@ -21,6 +21,7 @@
 		F7B8857F1E5C73A9006985E2 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8857E1E5C73A9006985E2 /* Comment.swift */; };
 		F7B885811E5C73C8006985E2 /* KPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B885801E5C73C8006985E2 /* KPerson.swift */; };
 		F7FFEB641E8D3D9F00375897 /* WaitingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FFEB631E8D3D9F00375897 /* WaitingTableViewCell.swift */; };
+		F7FFEB661E8D5C4900375897 /* BankIDActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FFEB651E8D5C4900375897 /* BankIDActionTableViewCell.swift */; };
 		F818B3C32B71442DE9343B95 /* Pods_Harpy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4233847C7D5B4B4438BF1A3 /* Pods_Harpy.framework */; };
 		FFD774DF1E8D568A00F4CA90 /* ikanosans-light-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFD774DE1E8D54A500F4CA90 /* ikanosans-light-webfont.ttf */; };
 		FFD774E01E8D568D00F4CA90 /* ikanosans-bold-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFD774DD1E8D54A500F4CA90 /* ikanosans-bold-webfont.ttf */; };
@@ -71,6 +72,7 @@
 		F7B8857E1E5C73A9006985E2 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		F7B885801E5C73C8006985E2 /* KPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPerson.swift; sourceTree = "<group>"; };
 		F7FFEB631E8D3D9F00375897 /* WaitingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingTableViewCell.swift; sourceTree = "<group>"; };
+		F7FFEB651E8D5C4900375897 /* BankIDActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankIDActionTableViewCell.swift; sourceTree = "<group>"; };
 		FFD774DD1E8D54A500F4CA90 /* ikanosans-bold-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ikanosans-bold-webfont.ttf"; path = "Fonts/ikanosans-bold-webfont.ttf"; sourceTree = "<group>"; };
 		FFD774DE1E8D54A500F4CA90 /* ikanosans-light-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ikanosans-light-webfont.ttf"; path = "Fonts/ikanosans-light-webfont.ttf"; sourceTree = "<group>"; };
 		FFD774E21E8D593300F4CA90 /* send_ico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = send_ico.png; path = Images/send_ico.png; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				F72554471E5C5300000F88E2 /* HarpyViewController.swift */,
 				F7B8857A1E5C5A34006985E2 /* CommentTableViewCell.swift */,
 				F7FFEB631E8D3D9F00375897 /* WaitingTableViewCell.swift */,
+				F7FFEB651E8D5C4900375897 /* BankIDActionTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				F70FF5581E5C827000B4584E /* APIAIService.swift in Sources */,
 				F72554461E5C5300000F88E2 /* AppDelegate.swift in Sources */,
 				F7B885811E5C73C8006985E2 /* KPerson.swift in Sources */,
+				F7FFEB661E8D5C4900375897 /* BankIDActionTableViewCell.swift in Sources */,
 				F7B8857D1E5C67E3006985E2 /* HarpyDataSource.swift in Sources */,
 				F7FFEB641E8D3D9F00375897 /* WaitingTableViewCell.swift in Sources */,
 			);

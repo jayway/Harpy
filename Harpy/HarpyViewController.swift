@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
+class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, BankIDActionDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textEditorBackground: UIView!
     @IBOutlet weak var textEditor: UITextField!
@@ -135,7 +135,12 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             return cell
         }
         let comment = dataSource.comments[indexPath.row]
-        if comment.isServerResponse{
+        if comment.isBankIdRequest{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BankIDActionCell", for: indexPath) as! BankIDActionTableViewCell
+            cell.messageLabel.text = comment.commentString
+            cell.delegate = self
+            return cell
+        }else if comment.isServerResponse{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentLeft", for: indexPath) as! CommentTableViewCell
             cell.commentLabel.text = comment.commentString
             return cell
