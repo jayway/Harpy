@@ -31,10 +31,17 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         self.view.addGestureRecognizer(tapGestureRecognizor)
         tapGestureRecognizor.isEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChangeFrameNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(openBankID))
+        view.addGestureRecognizer(swipe)
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func openBankID() {
+        UIApplication.shared.openURL(URL(string: "http://mayholm.com/bankid/mock")!)
     }
 
     override func didReceiveMemoryWarning() {
