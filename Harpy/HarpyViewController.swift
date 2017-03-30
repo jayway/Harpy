@@ -17,6 +17,8 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     var dataSource: HarpyDataSource!
     var apiService: APIAIService!
+    
+    var isWaitingForResponse = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -61,10 +63,12 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 self.dataSource.addNewComment(message: message)
                 self.textEditor.text = ""
                 self.endWriting()
+                self.isWaitingForResponse = true
                 self.tableView.reloadData()
                 
                 apiService.performTextRequest(message: message, success: { (comment) in
                     self.dataSource.addNewCommentObject(comment: comment)
+                    self.isWaitingForResponse = false
                     self.tableView.reloadData()
                 }, failure: {
                     
@@ -92,10 +96,18 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     //MARK: - UItableViewDatasource, Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.isWaitingForResponse{
+            return dataSource.comments.count + 1
+        }
         return dataSource.comments.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if isWaitingForResponse && indexPath.row == dataSource.comments.count{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Waiting", for: indexPath) as! WaitingTableViewCell
+            cell.setup()
+            return cell
+        }
         let comment = dataSource.comments[indexPath.row]
         if comment.isServerResponse{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentLeft", for: indexPath) as! CommentTableViewCell
