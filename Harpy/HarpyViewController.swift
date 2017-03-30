@@ -40,7 +40,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.endWriting()
+        self.didPressSend(self.textEditor)
         return true
     }
     
