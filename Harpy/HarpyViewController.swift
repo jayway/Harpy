@@ -70,13 +70,16 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                     self.dataSource.addNewCommentObject(comment: comment)
                     self.isWaitingForResponse = false
                     self.tableView.reloadData()
-                    let lastItem = IndexPath(item: self.dataSource.comments.count - 1, section: 0)
-                    self.tableView.scrollToRow(at: lastItem, at: .bottom, animated: true)
                 }, failure: {
                     
                 })
             }
         }
+    }
+    
+    fileprivate func scrollToBottom(){
+        let lastItem = IndexPath(item: self.dataSource.comments.count - 1, section: 0)
+        self.tableView.scrollToRow(at: lastItem, at: .bottom, animated: true)
     }
     
     private func startWriting(){
@@ -126,7 +129,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
 
 }
 
-extension UIViewController {
+extension HarpyViewController {
     func keyboardWillChangeFrameNotification(notification: NSNotification, scrollBottomConstant: NSLayoutConstraint) {
         let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber
         let curve = notification.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber
@@ -137,6 +140,7 @@ extension UIViewController {
         let isBeginOrEnd = keyboardBeginFrame.origin.y == screenHeight || keyboardEndFrame.origin.y == screenHeight
         let heightOffset = keyboardBeginFrame.origin.y - keyboardEndFrame.origin.y - (isBeginOrEnd ? bottomLayoutGuide.length : 0)
         
+        
         UIView.animate(withDuration: duration.doubleValue,
                                    delay: 0,
                                    options: UIViewAnimationOptions(rawValue: UInt(curve.intValue << 16)),
@@ -144,8 +148,11 @@ extension UIViewController {
                                     scrollBottomConstant.constant = scrollBottomConstant.constant + heightOffset
                                     self.view.layoutIfNeeded()
         },
-                                   completion: nil
-        )
+                                   completion: { (completed) in
+                                    self.scrollToBottom()
+                                    
+                                    
+        })
     }
 }
 
