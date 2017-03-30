@@ -17,13 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        
-        KPersonService.findPersonBy(name: "erik", office: "") { (people) in
-            print("Received \(people.count) people")
-        }
         self.apiAI = ApiAI()
         let configuration = AIDefaultConfiguration()
-        configuration.clientAccessToken = "95e83622de3043ce92e729dfc7d91797"
+        configuration.clientAccessToken = "f08945e6492f4a67a38019382b6f5065"
         self.apiAI!.configuration = configuration
 
         return true

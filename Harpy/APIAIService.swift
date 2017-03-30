@@ -28,13 +28,9 @@ class APIAIService{
                 if let message = params.message{
                     commentString = message
                 }
-                KPersonService.findPersonBy(name: params.name, office: params.office, successHandler: { (kpersons) in
-                    DispatchQueue.main.async {
-                        success(Comment(date: Date(), commentString: commentString, kPersons: kpersons, isServerResponse: true))
-                    }
-                })
-                
-                
+                DispatchQueue.main.async {
+                    success(Comment(date: Date(), commentString: commentString, isServerResponse: true))
+                }
             }
         }, failure: { (request, error) in
             print(error ?? "No error")

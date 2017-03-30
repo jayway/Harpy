@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,16 +35,10 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcO-6Q-oRa" customClass="AnimatableView" customModule="IBAnimatable">
                                                     <rect key="frame" x="252" y="20.5" width="60" height="29"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.92549019607843142" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                                            <color key="value" red="0.054901960784313725" green="0.8784313725490196" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                                            <color key="value" red="0.070588235294117646" green="0.87058823529411766" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="13"/>
+                                                            <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="toneOpacity">
                                                             <real key="value" value="1"/>
@@ -52,6 +46,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadeOpacity">
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_cornerSides" value="topLeft, bottomLeft, bottomRight"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1L-3E-hBY" customClass="AnimatableLabel" customModule="IBAnimatable">
@@ -88,11 +83,12 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOG-tb-dad" customClass="AnimatableView" customModule="IBAnimatable">
                                                     <rect key="frame" x="16" y="20.5" width="60" height="29"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.94117647059999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="13"/>
+                                                            <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_cornerSides" value="bottomLeft, bottomRight, topRight"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xru-Ry-iSm" customClass="AnimatableLabel" customModule="IBAnimatable">
@@ -120,103 +116,48 @@
                                             <outlet property="commentLabel" destination="Xru-Ry-iSm" id="hPX-Sp-e71"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentKPersons" rowHeight="200" id="S1K-I3-el8" customClass="CommentKPersonsTableViewCell" customModule="Harpy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="168" width="320" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Waiting" id="dTd-3M-Ra8" customClass="WaitingTableViewCell" customModule="Harpy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="168" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S1K-I3-el8" id="rK9-IG-cRb">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dTd-3M-Ra8" id="Qhk-Np-YjC">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KlI-Hb-Wqb" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="16" y="12" width="60" height="36"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoC-Pp-etF" customClass="AnimatableView" customModule="IBAnimatable">
+                                                    <rect key="frame" x="16" y="21" width="60" height="29"/>
+                                                    <subviews>
+                                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Dsv-yY-esk">
+                                                            <rect key="frame" x="10" y="-4" width="39" height="37"/>
+                                                            <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="currentPageIndicatorTintColor" red="0.92549019610000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </pageControl>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.94117647059999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="29" id="q3o-bp-GIv"/>
+                                                        <constraint firstItem="Dsv-yY-esk" firstAttribute="centerX" secondItem="KoC-Pp-etF" secondAttribute="centerX" id="q4e-2w-u74"/>
+                                                        <constraint firstItem="Dsv-yY-esk" firstAttribute="centerY" secondItem="KoC-Pp-etF" secondAttribute="centerY" id="xWe-77-sBw"/>
+                                                        <constraint firstAttribute="width" constant="60" id="zY1-Oc-YCC"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="13"/>
+                                                            <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_cornerSides" value="bottomLeft, bottomRight, topRight"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9o9-ja-8ZP" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="24" y="16" width="44" height="28"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" red="0.22352941176470587" green="0.21176470588235294" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aY3-Mv-KAW">
-                                                    <rect key="frame" x="16" y="56" width="288" height="128"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="128" id="Jc5-CN-LBp"/>
-                                                    </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EGL-46-Dr7">
-                                                        <size key="itemSize" width="100" height="128"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                    <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="KPerson" id="pft-l7-8zY" customClass="KPersonCollectionViewCell" customModule="Harpy" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1ya-5x-plD">
-                                                                        <rect key="frame" x="16" y="19" width="68" height="21"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="textColor" red="0.22352941176470587" green="0.21176470588235294" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cSL-ZY-ZvZ">
-                                                                        <rect key="frame" x="16" y="48" width="68" height="21"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="textColor" red="0.22352941176470587" green="0.21176470588235294" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </view>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="cSL-ZY-ZvZ" secondAttribute="trailing" constant="8" id="1ZF-yW-pxd"/>
-                                                                <constraint firstItem="cSL-ZY-ZvZ" firstAttribute="leading" secondItem="pft-l7-8zY" secondAttribute="leadingMargin" constant="8" id="4xL-TG-l6H"/>
-                                                                <constraint firstItem="1ya-5x-plD" firstAttribute="top" secondItem="pft-l7-8zY" secondAttribute="topMargin" constant="11" id="Vbs-VV-AI1"/>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="1ya-5x-plD" secondAttribute="trailing" constant="8" id="WGG-6a-pYM"/>
-                                                                <constraint firstItem="1ya-5x-plD" firstAttribute="leading" secondItem="pft-l7-8zY" secondAttribute="leadingMargin" constant="8" id="mx3-NB-L8e"/>
-                                                                <constraint firstItem="cSL-ZY-ZvZ" firstAttribute="top" secondItem="1ya-5x-plD" secondAttribute="bottom" constant="8" id="rjd-iF-pyD"/>
-                                                            </constraints>
-                                                            <connections>
-                                                                <outlet property="nameLabel" destination="1ya-5x-plD" id="Ijv-He-CaB"/>
-                                                                <outlet property="officeLabel" destination="cSL-ZY-ZvZ" id="ZvI-ad-HDL"/>
-                                                            </connections>
-                                                        </collectionViewCell>
-                                                    </cells>
-                                                    <connections>
-                                                        <outlet property="dataSource" destination="S1K-I3-el8" id="fSe-F4-er9"/>
-                                                        <outlet property="delegate" destination="S1K-I3-el8" id="cPK-Y6-QVU"/>
-                                                    </connections>
-                                                </collectionView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="9o9-ja-8ZP" secondAttribute="trailing" constant="16" id="1C1-Ft-xXn"/>
-                                                <constraint firstItem="KlI-Hb-Wqb" firstAttribute="bottom" secondItem="9o9-ja-8ZP" secondAttribute="bottom" constant="4" id="9Nw-L0-W2V"/>
-                                                <constraint firstItem="aY3-Mv-KAW" firstAttribute="leading" secondItem="rK9-IG-cRb" secondAttribute="leadingMargin" constant="8" id="JNg-hX-0Af"/>
-                                                <constraint firstItem="KlI-Hb-Wqb" firstAttribute="trailing" secondItem="9o9-ja-8ZP" secondAttribute="trailing" constant="8" id="SiX-OG-lka"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="aY3-Mv-KAW" secondAttribute="bottom" constant="8" id="bPL-o1-TZA"/>
-                                                <constraint firstItem="KlI-Hb-Wqb" firstAttribute="leading" secondItem="9o9-ja-8ZP" secondAttribute="leading" constant="-8" id="cBA-ke-I7r"/>
-                                                <constraint firstItem="aY3-Mv-KAW" firstAttribute="top" secondItem="KlI-Hb-Wqb" secondAttribute="bottom" constant="8" id="hQh-4f-Rfe"/>
-                                                <constraint firstItem="KlI-Hb-Wqb" firstAttribute="top" secondItem="9o9-ja-8ZP" secondAttribute="top" constant="-4" id="lw2-dm-OvN"/>
-                                                <constraint firstItem="9o9-ja-8ZP" firstAttribute="leading" secondItem="rK9-IG-cRb" secondAttribute="leadingMargin" constant="16" id="myV-RH-JqQ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="aY3-Mv-KAW" secondAttribute="trailing" constant="8" id="rl5-Xm-Q6e"/>
-                                                <constraint firstItem="9o9-ja-8ZP" firstAttribute="top" secondItem="rK9-IG-cRb" secondAttribute="topMargin" constant="8" id="tY7-II-7qZ"/>
+                                                <constraint firstItem="KoC-Pp-etF" firstAttribute="leading" secondItem="Qhk-Np-YjC" secondAttribute="leadingMargin" constant="8" id="Aen-aa-zwc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KoC-Pp-etF" secondAttribute="bottom" constant="12" id="LiK-k6-p0M"/>
+                                                <constraint firstItem="KoC-Pp-etF" firstAttribute="top" secondItem="Qhk-Np-YjC" secondAttribute="topMargin" constant="13" id="Wp6-da-jZC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="collectionView" destination="aY3-Mv-KAW" id="IBX-p2-PLG"/>
-                                            <outlet property="commentLabel" destination="9o9-ja-8ZP" id="Zmg-KF-5QV"/>
+                                            <outlet property="commentBackground" destination="KoC-Pp-etF" id="hoE-K6-4kF"/>
+                                            <outlet property="pageControl" destination="Dsv-yY-esk" id="Y13-mq-LLQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -262,7 +203,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.91525533347549837" green="0.91525533347549837" blue="0.91525533347549837" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="W4I-UN-hr5" secondAttribute="bottom" id="JFK-Yh-hdo"/>
                             <constraint firstItem="8zt-83-Qtp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JIC-aS-JoK"/>

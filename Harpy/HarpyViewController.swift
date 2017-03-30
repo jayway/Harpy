@@ -98,15 +98,9 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let comment = dataSource.comments[indexPath.row]
         if comment.isServerResponse{
-            if let kPersons = comment.kPersons{
-                let cell = tableView.dequeueReusableCell(withIdentifier: "CommentKPersons", for: indexPath) as! CommentKPersonsTableViewCell
-                cell.setupCell(comment: comment.commentString, kPersons: kPersons)
-                return cell
-            }else{
-                let cell = tableView.dequeueReusableCell(withIdentifier: "CommentLeft", for: indexPath) as! CommentTableViewCell
-                cell.commentLabel.text = comment.commentString
-                return cell
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentLeft", for: indexPath) as! CommentTableViewCell
+            cell.commentLabel.text = comment.commentString
+            return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentRight", for: indexPath) as! CommentTableViewCell
             cell.commentLabel.text = comment.commentString
