@@ -19,6 +19,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     var apiService: APIAIService!
     
     var isWaitingForResponse = false
+    var tapGestureRecognizor: UITapGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,7 +27,9 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         apiService = APIAIService()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
-        
+        tapGestureRecognizor = UITapGestureRecognizer(target: self, action: #selector(didTapView))
+        self.view.addGestureRecognizer(tapGestureRecognizor)
+        tapGestureRecognizor.isEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChangeFrameNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
@@ -96,8 +99,19 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         }
         self.view.endEditing(true)
     }
-    //10e0d9
-    //39363C
+    
+    func didTapView(){
+        textEditor.resignFirstResponder()
+    }
+    
+    fileprivate func addGestureRecognizer(){
+        tapGestureRecognizor.isEnabled = true
+    }
+    
+    fileprivate func removeGestureRecognizer(){
+        tapGestureRecognizor.isEnabled = false
+    }
+    
     
     //MARK: - UItableViewDatasource, Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,6 +154,11 @@ extension HarpyViewController {
         let isBeginOrEnd = keyboardBeginFrame.origin.y == screenHeight || keyboardEndFrame.origin.y == screenHeight
         let heightOffset = keyboardBeginFrame.origin.y - keyboardEndFrame.origin.y - (isBeginOrEnd ? bottomLayoutGuide.length : 0)
         
+        if heightOffset > 0{
+            self.addGestureRecognizer()
+        }else{
+            self.removeGestureRecognizer()
+        }
         
         UIView.animate(withDuration: duration.doubleValue,
                                    delay: 0,
