@@ -124,6 +124,7 @@
                                         <connections>
                                             <outlet property="commentBackground" destination="QOG-tb-dad" id="36q-Fd-RYr"/>
                                             <outlet property="commentLabel" destination="Xru-Ry-iSm" id="hPX-Sp-e71"/>
+                                            <outlet property="topMargin" destination="VuB-MK-nMJ" id="kPD-hU-e83"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Waiting" id="dTd-3M-Ra8" customClass="WaitingTableViewCell" customModule="Harpy" customModuleProvider="target">
@@ -350,7 +351,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingvar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBt-Pj-PYu">
-                                        <rect key="frame" x="135" y="28" width="51.5" height="22"/>
+                                        <rect key="frame" x="134.5" y="28" width="51.5" height="22"/>
                                         <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
                                         <color key="textColor" red="0.20392156862745098" green="0.20784313725490194" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -386,6 +387,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="answersContainerView" destination="G4J-1R-cVw" id="zBr-08-irR"/>
                         <outlet property="answersStackView" destination="UVC-wi-0k6" id="NlT-x3-s0Y"/>
                         <outlet property="inputContainerBottomConstraint" destination="JFK-Yh-hdo" id="7dQ-xc-6Cj"/>
                         <outlet property="sendButton" destination="kYQ-5k-kuM" id="k7J-kP-Wsu"/>

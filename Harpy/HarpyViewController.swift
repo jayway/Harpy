@@ -10,6 +10,7 @@ import UIKit
 import IBAnimatable
 class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, BankIDActionDelegate {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var answersContainerView: UIView!
     @IBOutlet weak var answersStackView: AnimatableStackView!
     @IBOutlet weak var textEditorBackground: UIView!
     @IBOutlet weak var textEditor: UITextField!
@@ -20,6 +21,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     var ingvarView: IngvarView?
     var hasBeenPresentedInitially = false
+
     static let BANKID_NOTIFICATION = "bankIdWasVerified"
     
     var dataSource: HarpyDataSource!
@@ -135,7 +137,12 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                     self.answersStackView.duration = 1
                     self.answersStackView.slide(.in, direction: .up)
                 }
+                self.view.setNeedsLayout()
+                self.view.layoutIfNeeded()
                 
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                    self.scrollToBottom()
+                })
             }else{
                 self.dataSource.addNewCommentObject(comment: comment)
             }
@@ -241,6 +248,10 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         }else if comment.isServerResponse{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentLeft", for: indexPath) as! CommentTableViewCell
             cell.commentLabel.text = comment.commentString
+            if indexPath.row > 0 {
+                let previousComment = dataSource.comments[indexPath.row-1]
+                cell.topMargin.constant = previousComment.isServerResponse ? 0 : 16
+            }
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentRight", for: indexPath) as! CommentTableViewCell
@@ -250,6 +261,9 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         
     }
 
+    override func viewDidLayoutSubviews() {
+        tableView.contentInset = UIEdgeInsetsMake(60, 0, self.answersContainerView.frame.height, 0)
+    }
 
 }
 
