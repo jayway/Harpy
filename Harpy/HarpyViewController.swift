@@ -17,6 +17,8 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var sendButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputContainerBottomConstraint: NSLayoutConstraint!
     
+    
+    
     static let BANKID_NOTIFICATION = "bankIdWasVerified"
     
     var dataSource: HarpyDataSource!

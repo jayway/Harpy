@@ -19,7 +19,6 @@ class BankIDActionTableViewCell: UITableViewCell {
     @IBAction func didPressOpenBankID(_ sender: Any) {
         delegate.openBankID()
         button.backgroundColor = UIColor(hexString: "F0F4F4")
-        button.isEnabled = false
         self.didTouchCancel(button)
     }
     
