@@ -9,6 +9,7 @@
 import UIKit
 class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, BankIDActionDelegate {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var answersStackView: UIStackView!
     @IBOutlet weak var textEditorBackground: UIView!
     @IBOutlet weak var textEditor: UITextField!
     @IBOutlet weak var sendButton: UIButton!
@@ -31,9 +32,13 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         self.view.addGestureRecognizer(tapGestureRecognizor)
         tapGestureRecognizor.isEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChangeFrameNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(openBankID))
         view.addGestureRecognizer(swipe)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.addAlternative()
+            self.addAlternative()
+            self.addAlternative()
+        }
     }
     
     deinit {
@@ -118,7 +123,6 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     fileprivate func removeGestureRecognizer(){
         tapGestureRecognizor.isEnabled = false
     }
-    
     
     //MARK: - UItableViewDatasource, Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
