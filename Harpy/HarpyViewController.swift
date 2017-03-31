@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import IBAnimatable
 class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, BankIDActionDelegate {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var answersStackView: UIStackView!
+    @IBOutlet weak var answersStackView: AnimatableStackView!
     @IBOutlet weak var textEditorBackground: UIView!
     @IBOutlet weak var textEditor: UITextField!
     @IBOutlet weak var titleHeader: UIView!
@@ -101,7 +102,15 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     private func addCommentsToDatasource(commentArray: [Comment]){
         for comment in commentArray{
             if let replies = comment.replies, replies.count > 0{
-                replies.forEach { self.addAnswerButton(text: $0) }
+                self.answersStackView.isHidden = true
+                self.answersStackView.duration = 0
+                self.answersStackView.slide(.out, direction: .down){
+                    replies.forEach { self.addAnswerButton(text: $0) }
+                    self.answersStackView.isHidden = false
+                    self.answersStackView.duration = 1
+                    self.answersStackView.slide(.in, direction: .up)
+                }
+                
             }else{
                 self.dataSource.addNewCommentObject(comment: comment)
             }
