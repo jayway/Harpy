@@ -65,6 +65,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     func bankIdVerified() {
         let message = "butterstick"
         self.dataSource.addNewComment(message: "Confirmed with BankID")
+        self.dataSource.removeAllBankRequest()
         self.isWaitingForResponse = true
         self.tableView.reloadData()
         apiService.performTextRequest(message: message, success: { (commentArray) in
