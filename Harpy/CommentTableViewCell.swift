@@ -11,6 +11,7 @@ import IBAnimatable
 class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var commentBackground: AnimatableView!
     @IBOutlet weak var commentLabel: AnimatableLabel!
+    @IBOutlet weak var topMargin: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()

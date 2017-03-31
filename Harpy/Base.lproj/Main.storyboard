@@ -110,7 +110,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Xru-Ry-iSm" secondAttribute="trailing" constant="16" id="1lf-SQ-tAz"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Xru-Ry-iSm" secondAttribute="trailing" constant="80" id="1lf-SQ-tAz"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Xru-Ry-iSm" secondAttribute="bottom" constant="16" id="6Ug-hl-jga"/>
                                                 <constraint firstItem="QOG-tb-dad" firstAttribute="bottom" secondItem="Xru-Ry-iSm" secondAttribute="bottom" constant="12" id="8MQ-XW-KWH"/>
                                                 <constraint firstItem="Xru-Ry-iSm" firstAttribute="leading" secondItem="DsH-la-2nB" secondAttribute="leadingMargin" constant="16" id="FCW-8R-LhQ"/>
@@ -124,6 +124,7 @@
                                         <connections>
                                             <outlet property="commentBackground" destination="QOG-tb-dad" id="36q-Fd-RYr"/>
                                             <outlet property="commentLabel" destination="Xru-Ry-iSm" id="hPX-Sp-e71"/>
+                                            <outlet property="topMargin" destination="VuB-MK-nMJ" id="kPD-hU-e83"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Waiting" id="dTd-3M-Ra8" customClass="WaitingTableViewCell" customModule="Harpy" customModuleProvider="target">
@@ -209,7 +210,7 @@
                                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-eQ-Cn8" userLabel="BankIdButtonContainer" customClass="AnimatableView" customModule="IBAnimatable">
                                                     <rect key="frame" x="8" y="83.5" width="188" height="44"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bankid_ico.png" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-4E-KVV">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bankid_ico" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-4E-KVV">
                                                             <rect key="frame" x="10" y="10" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="24" id="5Gb-3G-CqF"/>
@@ -263,7 +264,7 @@
                                                 <constraint firstItem="4p7-It-Mr8" firstAttribute="leading" secondItem="Esi-s6-iTF" secondAttribute="leading" constant="-16" id="RDD-FY-olZ"/>
                                                 <constraint firstItem="Esi-s6-iTF" firstAttribute="leading" secondItem="vhs-gg-xTH" secondAttribute="leadingMargin" constant="16" id="RTo-jj-7Sc"/>
                                                 <constraint firstItem="U7G-Bw-Y3N" firstAttribute="centerY" secondItem="v0A-eQ-Cn8" secondAttribute="centerY" id="Wua-8a-7q9"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Esi-s6-iTF" secondAttribute="trailing" constant="16" id="eyE-Yg-aZB"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Esi-s6-iTF" secondAttribute="trailing" constant="80" id="eyE-Yg-aZB"/>
                                                 <constraint firstItem="Esi-s6-iTF" firstAttribute="top" secondItem="vhs-gg-xTH" secondAttribute="topMargin" constant="16.5" id="hAG-Ww-t8o"/>
                                                 <constraint firstItem="4p7-It-Mr8" firstAttribute="bottom" secondItem="Esi-s6-iTF" secondAttribute="bottom" constant="12" id="yIj-EH-P6I"/>
                                             </constraints>
@@ -315,7 +316,7 @@
                                             <constraint firstAttribute="width" id="a9x-gd-ffB"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
-                                        <state key="normal" image="send_ico.png">
+                                        <state key="normal" image="send_ico">
                                             <color key="titleColor" red="0.92549019610000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -402,7 +403,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bankid_ico.png" width="24" height="24"/>
-        <image name="send_ico.png" width="22" height="20"/>
+        <image name="bankid_ico" width="24" height="24"/>
+        <image name="send_ico" width="22" height="20"/>
     </resources>
 </document>
