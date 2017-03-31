@@ -42,7 +42,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcO-6Q-oRa" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="238.5" y="12.5" width="69.5" height="45.5"/>
+                                                    <rect key="frame" x="234.5" y="12.5" width="77.5" height="45.5"/>
                                                     <color key="backgroundColor" red="0.92549019607843142" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -71,8 +71,8 @@
                                                 <constraint firstItem="mcO-6Q-oRa" firstAttribute="top" secondItem="a1L-3E-hBY" secondAttribute="top" constant="-12" id="DpA-5M-pne"/>
                                                 <constraint firstItem="a1L-3E-hBY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uR5-VS-4rJ" secondAttribute="leadingMargin" constant="16" id="QbK-IP-hf8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="a1L-3E-hBY" secondAttribute="trailing" constant="16" id="Wq7-jl-q6H"/>
-                                                <constraint firstItem="mcO-6Q-oRa" firstAttribute="trailing" secondItem="a1L-3E-hBY" secondAttribute="trailing" constant="12" id="byC-1f-LYd"/>
-                                                <constraint firstItem="mcO-6Q-oRa" firstAttribute="leading" secondItem="a1L-3E-hBY" secondAttribute="leading" constant="-12" id="oBj-c6-wIy"/>
+                                                <constraint firstItem="mcO-6Q-oRa" firstAttribute="trailing" secondItem="a1L-3E-hBY" secondAttribute="trailing" constant="16" id="byC-1f-LYd"/>
+                                                <constraint firstItem="mcO-6Q-oRa" firstAttribute="leading" secondItem="a1L-3E-hBY" secondAttribute="leading" constant="-16" id="oBj-c6-wIy"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="a1L-3E-hBY" secondAttribute="bottom" constant="16" id="q0p-tN-4yW"/>
                                                 <constraint firstItem="a1L-3E-hBY" firstAttribute="top" secondItem="uR5-VS-4rJ" secondAttribute="topMargin" constant="16" id="yqj-8y-FEC"/>
                                             </constraints>
@@ -91,7 +91,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOG-tb-dad" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="12" y="12.5" width="69.5" height="45"/>
+                                                    <rect key="frame" x="8" y="12.5" width="77.5" height="45"/>
                                                     <color key="backgroundColor" red="0.94117647059999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -114,8 +114,8 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="Xru-Ry-iSm" secondAttribute="bottom" constant="16" id="6Ug-hl-jga"/>
                                                 <constraint firstItem="QOG-tb-dad" firstAttribute="bottom" secondItem="Xru-Ry-iSm" secondAttribute="bottom" constant="12" id="8MQ-XW-KWH"/>
                                                 <constraint firstItem="Xru-Ry-iSm" firstAttribute="leading" secondItem="DsH-la-2nB" secondAttribute="leadingMargin" constant="16" id="FCW-8R-LhQ"/>
-                                                <constraint firstItem="QOG-tb-dad" firstAttribute="leading" secondItem="Xru-Ry-iSm" secondAttribute="leading" constant="-12" id="MPg-Te-bV7"/>
-                                                <constraint firstItem="QOG-tb-dad" firstAttribute="trailing" secondItem="Xru-Ry-iSm" secondAttribute="trailing" constant="12" id="VdW-HS-nQ3"/>
+                                                <constraint firstItem="QOG-tb-dad" firstAttribute="leading" secondItem="Xru-Ry-iSm" secondAttribute="leading" constant="-16" id="MPg-Te-bV7"/>
+                                                <constraint firstItem="QOG-tb-dad" firstAttribute="trailing" secondItem="Xru-Ry-iSm" secondAttribute="trailing" constant="16" id="VdW-HS-nQ3"/>
                                                 <constraint firstItem="Xru-Ry-iSm" firstAttribute="top" secondItem="DsH-la-2nB" secondAttribute="topMargin" constant="16.5" id="VuB-MK-nMJ"/>
                                                 <constraint firstItem="QOG-tb-dad" firstAttribute="top" secondItem="Xru-Ry-iSm" secondAttribute="top" constant="-12" id="keY-Kf-NRM"/>
                                             </constraints>
@@ -134,7 +134,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoC-Pp-etF" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="12" y="12" width="63" height="46"/>
+                                                    <rect key="frame" x="8" y="20" width="71" height="30"/>
                                                     <color key="backgroundColor" red="0.94117647059999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -151,13 +151,13 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="KoC-Pp-etF" firstAttribute="trailing" secondItem="Dsv-yY-esk" secondAttribute="trailing" constant="12" id="WPh-kX-mhA"/>
-                                                <constraint firstItem="KoC-Pp-etF" firstAttribute="bottom" secondItem="Dsv-yY-esk" secondAttribute="bottom" constant="12" id="Wjr-l3-xZx"/>
+                                                <constraint firstItem="KoC-Pp-etF" firstAttribute="trailing" secondItem="Dsv-yY-esk" secondAttribute="trailing" constant="16" id="WPh-kX-mhA"/>
+                                                <constraint firstItem="KoC-Pp-etF" firstAttribute="bottom" secondItem="Dsv-yY-esk" secondAttribute="bottom" constant="4" id="Wjr-l3-xZx"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Dsv-yY-esk" secondAttribute="bottom" constant="16" id="YCf-N5-70K"/>
                                                 <constraint firstItem="Dsv-yY-esk" firstAttribute="top" secondItem="Qhk-Np-YjC" secondAttribute="topMargin" constant="16" id="lQh-vy-5OA"/>
-                                                <constraint firstItem="KoC-Pp-etF" firstAttribute="top" secondItem="Dsv-yY-esk" secondAttribute="top" constant="-12" id="lsf-uJ-3PY"/>
+                                                <constraint firstItem="KoC-Pp-etF" firstAttribute="top" secondItem="Dsv-yY-esk" secondAttribute="top" constant="-4" id="lsf-uJ-3PY"/>
                                                 <constraint firstItem="Dsv-yY-esk" firstAttribute="leading" secondItem="Qhk-Np-YjC" secondAttribute="leadingMargin" constant="16" id="waL-rN-qUh"/>
-                                                <constraint firstItem="KoC-Pp-etF" firstAttribute="leading" secondItem="Dsv-yY-esk" secondAttribute="leading" constant="-12" id="xOu-NM-MBX"/>
+                                                <constraint firstItem="KoC-Pp-etF" firstAttribute="leading" secondItem="Dsv-yY-esk" secondAttribute="leading" constant="-16" id="xOu-NM-MBX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -173,7 +173,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4p7-It-Mr8" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="12" y="12.5" width="69.5" height="67"/>
+                                                    <rect key="frame" x="8" y="12.5" width="77.5" height="67"/>
                                                     <color key="backgroundColor" red="0.94117647059999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -190,7 +190,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7G-Bw-Y3N" customClass="AnimatableButton" customModule="IBAnimatable">
-                                                    <rect key="frame" x="12" y="83.5" width="188" height="44"/>
+                                                    <rect key="frame" x="8" y="83.5" width="188" height="44"/>
                                                     <color key="backgroundColor" red="0.94117647059999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="_cornerSides" value="bottomLeft, bottomRight, topRight"/>
@@ -207,7 +207,7 @@
                                                     </connections>
                                                 </button>
                                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-eQ-Cn8" userLabel="BankIdButtonContainer" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="12" y="83.5" width="188" height="44"/>
+                                                    <rect key="frame" x="8" y="83.5" width="188" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open BankID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-n1-M2v" customClass="AnimatableLabel" customModule="IBAnimatable">
                                                             <rect key="frame" x="38" y="11.5" width="106.5" height="22"/>
@@ -244,14 +244,14 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="Esi-s6-iTF" firstAttribute="bottom" secondItem="v0A-eQ-Cn8" secondAttribute="top" constant="-16" id="0hZ-gA-HAY"/>
-                                                <constraint firstItem="4p7-It-Mr8" firstAttribute="trailing" secondItem="Esi-s6-iTF" secondAttribute="trailing" constant="12" id="3bT-Bp-Yku"/>
+                                                <constraint firstItem="4p7-It-Mr8" firstAttribute="trailing" secondItem="Esi-s6-iTF" secondAttribute="trailing" constant="16" id="3bT-Bp-Yku"/>
                                                 <constraint firstItem="U7G-Bw-Y3N" firstAttribute="centerX" secondItem="v0A-eQ-Cn8" secondAttribute="centerX" id="6EJ-gw-ZOo"/>
                                                 <constraint firstItem="4p7-It-Mr8" firstAttribute="top" secondItem="Esi-s6-iTF" secondAttribute="top" constant="-12" id="8mc-j3-YYA"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="v0A-eQ-Cn8" secondAttribute="bottom" constant="4" id="MTI-bd-omP"/>
                                                 <constraint firstItem="U7G-Bw-Y3N" firstAttribute="height" secondItem="v0A-eQ-Cn8" secondAttribute="height" id="NWz-e6-mbY"/>
-                                                <constraint firstItem="v0A-eQ-Cn8" firstAttribute="leading" secondItem="vhs-gg-xTH" secondAttribute="leadingMargin" constant="4" id="P7r-yY-ElO"/>
+                                                <constraint firstItem="v0A-eQ-Cn8" firstAttribute="leading" secondItem="vhs-gg-xTH" secondAttribute="leadingMargin" id="P7r-yY-ElO"/>
                                                 <constraint firstItem="U7G-Bw-Y3N" firstAttribute="width" secondItem="v0A-eQ-Cn8" secondAttribute="width" id="PiB-0x-rzW"/>
-                                                <constraint firstItem="4p7-It-Mr8" firstAttribute="leading" secondItem="Esi-s6-iTF" secondAttribute="leading" constant="-12" id="RDD-FY-olZ"/>
+                                                <constraint firstItem="4p7-It-Mr8" firstAttribute="leading" secondItem="Esi-s6-iTF" secondAttribute="leading" constant="-16" id="RDD-FY-olZ"/>
                                                 <constraint firstItem="Esi-s6-iTF" firstAttribute="leading" secondItem="vhs-gg-xTH" secondAttribute="leadingMargin" constant="16" id="RTo-jj-7Sc"/>
                                                 <constraint firstItem="U7G-Bw-Y3N" firstAttribute="centerY" secondItem="v0A-eQ-Cn8" secondAttribute="centerY" id="Wua-8a-7q9"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Esi-s6-iTF" secondAttribute="trailing" constant="16" id="eyE-Yg-aZB"/>
@@ -323,7 +323,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingvar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBt-Pj-PYu">
-                                        <rect key="frame" x="135" y="28" width="51.5" height="22"/>
+                                        <rect key="frame" x="134.5" y="28" width="51.5" height="22"/>
                                         <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
                                         <color key="textColor" red="0.20392156862745098" green="0.20784313725490194" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
