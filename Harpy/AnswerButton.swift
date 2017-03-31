@@ -14,7 +14,7 @@ class AnswerButton: UIControl {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 15
+        layer.cornerRadius = 10
         layer.borderWidth = 2
         self.tintColorDidChange()
     }
@@ -35,10 +35,16 @@ class AnswerButton: UIControl {
     override var isHighlighted: Bool {
         didSet {
             if isHighlighted {
-                layer.borderColor = UIColor.purple.cgColor
+                layer.borderWidth = 0
+                backgroundColor = tintColor
+                label.textColor = UIColor.white
             }
             else {
                 layer.borderColor = tintColor.cgColor
+                label.textColor = tintColor
+                layer.borderWidth = 2
+                backgroundColor = UIColor.clear
+                
             }
         }
     }

@@ -49,6 +49,8 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         titleHeader.addSubview(blurEffectView)
+        
+        view.tintColor = UIColor.init(hexString: "EC0000")
     }
     
     deinit {
