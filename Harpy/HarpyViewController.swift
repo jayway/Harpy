@@ -185,7 +185,9 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     }
     
     fileprivate func scrollToBottom(){
-        let lastItem = IndexPath(item: self.dataSource.comments.count - 1, section: 0)
+        var lastItem: IndexPath!
+        let numberOfRows = self.tableView.numberOfRows(inSection: 0)
+        lastItem = IndexPath(item: numberOfRows - 1, section: 0)
         self.tableView.scrollToRow(at: lastItem, at: .bottom, animated: true)
     }
     
@@ -268,6 +270,7 @@ extension HarpyViewController {
             self.removeGestureRecognizer()
         }
             let height = tableView.contentSize.height
+            self.view.layoutIfNeeded()
                UIView.animate(withDuration: duration.doubleValue,
                        delay: 0,
                        options: UIViewAnimationOptions(rawValue: UInt(curve.intValue << 16)),
