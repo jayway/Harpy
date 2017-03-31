@@ -58,9 +58,9 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     override func viewWillAppear(_ animated: Bool) {
         let ingvarView = IngvarView.instanceFromNib()
-        ingvarView?.frame = self.view.frame
-        self.view.addSubview(ingvarView)
-        ingvarView?.startAnimating()
+        ingvarView!.frame = self.view.frame
+        self.view.addSubview(ingvarView!)
+        ingvarView!.startAnimating()
     }
     
     deinit {
