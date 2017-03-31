@@ -15,6 +15,8 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var sendButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputContainerBottomConstraint: NSLayoutConstraint!
     
+    static let BANKID_NOTIFICATION = "bankIdWasVerified"
+    
     var dataSource: HarpyDataSource!
     var apiService: APIAIService!
     
@@ -31,6 +33,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         self.view.addGestureRecognizer(tapGestureRecognizor)
         tapGestureRecognizor.isEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChangeFrameNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(bankIdVerified), name: NSNotification.Name(rawValue: HarpyViewController.BANKID_NOTIFICATION), object: nil)
         
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(openBankID))
         view.addGestureRecognizer(swipe)
@@ -42,6 +45,22 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     func openBankID() {
         UIApplication.shared.openURL(URL(string: "http://mayholm.com/bankid/mock")!)
+    }
+    
+    func bankIdVerified() {
+        let message = "butterstick"
+        self.dataSource.addNewComment(message: "Confirmed with BankID")
+        self.isWaitingForResponse = true
+        self.tableView.reloadData()
+        apiService.performTextRequest(message: message, success: { (comment) in
+            self.isWaitingForResponse = false
+            self.dataSource.addNewCommentObject(comment: comment)
+            self.isWaitingForResponse = false
+            self.tableView.reloadData()
+            self.scrollToBottom()
+        }, failure: {
+            
+        })
     }
 
     override func didReceiveMemoryWarning() {
