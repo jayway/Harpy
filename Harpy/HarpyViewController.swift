@@ -241,9 +241,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             cell.commentLabel.text = comment.commentString
             if indexPath.row > 0 {
                 let previousComment = dataSource.comments[indexPath.row-1]
-                if previousComment.isServerResponse {
-                    cell.topMargin.constant = 0
-                }
+                cell.topMargin.constant = previousComment.isServerResponse ? 0 : 16
             }
             return cell
         }else{
