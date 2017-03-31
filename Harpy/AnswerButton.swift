@@ -14,6 +14,7 @@ class AnswerButton: UIControl {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        layer.backgroundColor = UIColor.white.cgColor
         layer.cornerRadius = 10
         layer.borderWidth = 2
         self.tintColorDidChange()
@@ -43,7 +44,7 @@ class AnswerButton: UIControl {
                 layer.borderColor = tintColor.cgColor
                 label.textColor = tintColor
                 layer.borderWidth = 2
-                backgroundColor = UIColor.clear
+                backgroundColor = UIColor.white
                 
             }
         }
