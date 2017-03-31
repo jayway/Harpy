@@ -209,8 +209,15 @@
                                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-eQ-Cn8" userLabel="BankIdButtonContainer" customClass="AnimatableView" customModule="IBAnimatable">
                                                     <rect key="frame" x="8" y="83.5" width="188" height="44"/>
                                                     <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bankid_ico.png" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-4E-KVV">
+                                                            <rect key="frame" x="10" y="10" width="24" height="24"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="24" id="5Gb-3G-CqF"/>
+                                                                <constraint firstAttribute="height" constant="24" id="If4-zt-ang"/>
+                                                            </constraints>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open BankID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-n1-M2v" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                            <rect key="frame" x="38" y="11.5" width="106.5" height="22"/>
+                                                            <rect key="frame" x="44" y="11.5" width="106.5" height="22"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
                                                             <color key="textColor" red="0.20392156859999999" green="0.20784313730000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,12 +233,14 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
+                                                        <constraint firstItem="aOh-4E-KVV" firstAttribute="leading" secondItem="v0A-eQ-Cn8" secondAttribute="leading" constant="10" id="1XQ-Ak-pF6"/>
                                                         <constraint firstItem="7E7-n1-M2v" firstAttribute="centerY" secondItem="v0A-eQ-Cn8" secondAttribute="centerY" id="62k-rV-6Rr"/>
                                                         <constraint firstItem="s1n-3P-AUC" firstAttribute="centerY" secondItem="v0A-eQ-Cn8" secondAttribute="centerY" id="9lW-Yb-chU"/>
+                                                        <constraint firstItem="aOh-4E-KVV" firstAttribute="centerY" secondItem="v0A-eQ-Cn8" secondAttribute="centerY" id="Hdp-Ps-ywI"/>
                                                         <constraint firstAttribute="height" constant="44" id="Jk0-uV-JbL"/>
-                                                        <constraint firstItem="7E7-n1-M2v" firstAttribute="leading" secondItem="v0A-eQ-Cn8" secondAttribute="leading" constant="38" id="TBQ-1O-peA"/>
                                                         <constraint firstAttribute="width" constant="188" id="atq-Pm-Shn"/>
                                                         <constraint firstAttribute="trailing" secondItem="s1n-3P-AUC" secondAttribute="trailing" constant="12" id="ef3-0m-8B4"/>
+                                                        <constraint firstItem="7E7-n1-M2v" firstAttribute="leading" secondItem="aOh-4E-KVV" secondAttribute="trailing" constant="10" id="oUn-w2-CFK"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -393,6 +402,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bankid_ico.png" width="24" height="24"/>
         <image name="send_ico.png" width="22" height="20"/>
     </resources>
 </document>
