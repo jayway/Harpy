@@ -12,7 +12,8 @@ class HarpyDataSource{
     var comments = [Comment]()
     
     init(){
-        comments.append(Comment(date: Date(), commentString: "Hey! What do you need help with today?", isServerResponse: true, isBankIdRequest: false, replies: nil))
+        comments.append(Comment(date: Date(), commentString: "Hi! I’m Ingvar. I’m actually a robot, but I’ll help you with any questions you may have!", isServerResponse: true, isBankIdRequest: false, replies: nil))
+        comments.append(Comment(date: Date(), commentString: "What can I do for you?", isServerResponse: true, isBankIdRequest: false, replies: nil))
     }
     
     func addNewComment(message: String){

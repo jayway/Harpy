@@ -19,6 +19,9 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var sendButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputContainerBottomConstraint: NSLayoutConstraint!
     
+    var ingvarView: IngvarView?
+    var hasBeenPresentedInitially = false
+
     static let BANKID_NOTIFICATION = "bankIdWasVerified"
     
     var dataSource: HarpyDataSource!
@@ -53,6 +56,26 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         titleHeader.addSubview(blurEffectView)
         
         view.tintColor = UIColor.init(hexString: "EC0000")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if !hasBeenPresentedInitially{
+            let ingvarView = IngvarView.instanceFromNib()
+            ingvarView!.frame = self.view.frame
+            self.view.addSubview(ingvarView!)
+            self.ingvarView = ingvarView
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if !hasBeenPresentedInitially{
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
+                self.ingvarView?.startAnimating()
+            })
+            
+            self.hasBeenPresentedInitially = true
+        }
     }
     
     deinit {
@@ -223,6 +246,12 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         }else if comment.isServerResponse{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentLeft", for: indexPath) as! CommentTableViewCell
             cell.commentLabel.text = comment.commentString
+            if indexPath.row > 0 {
+                let previousComment = dataSource.comments[indexPath.row-1]
+                if previousComment.isServerResponse {
+                    cell.topMargin.constant = 0
+                }
+            }
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentRight", for: indexPath) as! CommentTableViewCell
