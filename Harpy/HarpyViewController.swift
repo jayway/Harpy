@@ -9,6 +9,7 @@
 import UIKit
 class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, BankIDActionDelegate {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var answersStackView: UIStackView!
     @IBOutlet weak var textEditorBackground: UIView!
     @IBOutlet weak var textEditor: UITextField!
     @IBOutlet weak var titleHeader: UIView!
@@ -30,7 +31,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         apiService = APIAIService()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
-        tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(60, 0, 0, 0)
         
         tapGestureRecognizor = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         self.view.addGestureRecognizer(tapGestureRecognizor)
@@ -63,9 +64,9 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         self.dataSource.addNewComment(message: "Confirmed with BankID")
         self.isWaitingForResponse = true
         self.tableView.reloadData()
-        apiService.performTextRequest(message: message, success: { (comment) in
+        apiService.performTextRequest(message: message, success: { (commentArray) in
             self.isWaitingForResponse = false
-            self.dataSource.addNewCommentObject(comment: comment)
+            self.addCommentsToDatasource(commentArray: commentArray)
             self.isWaitingForResponse = false
             self.tableView.reloadData()
             self.scrollToBottom()
@@ -97,6 +98,16 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         // Write more to here if you want.
     }
     
+    private func addCommentsToDatasource(commentArray: [Comment]){
+        for comment in commentArray{
+            if let replies = comment.replies, replies.count > 0{
+                print("===SHOULD DISPLAY REPLY ALTERNATIVES===")
+            }else{
+                self.dataSource.addNewCommentObject(comment: comment)
+            }
+        }
+    }
+    
     @IBAction func didPressSend(_ sender: Any) {
         if let message = textEditor.text{
             if message != ""{
@@ -106,8 +117,8 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 self.isWaitingForResponse = true
                 self.tableView.reloadData()
                 
-                apiService.performTextRequest(message: message, success: { (comment) in
-                    self.dataSource.addNewCommentObject(comment: comment)
+                apiService.performTextRequest(message: message, success: { (commentArray) in
+                    self.addCommentsToDatasource(commentArray: commentArray)
                     self.isWaitingForResponse = false
                     self.tableView.reloadData()
                 }, failure: {
@@ -148,7 +159,6 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     fileprivate func removeGestureRecognizer(){
         tapGestureRecognizor.isEnabled = false
     }
-    
     
     //MARK: - UItableViewDatasource, Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
