@@ -64,9 +64,9 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         self.dataSource.addNewComment(message: "Confirmed with BankID")
         self.isWaitingForResponse = true
         self.tableView.reloadData()
-        apiService.performTextRequest(message: message, success: { (comment) in
+        apiService.performTextRequest(message: message, success: { (commentArray) in
             self.isWaitingForResponse = false
-            self.dataSource.addNewCommentObject(comment: comment)
+            self.addCommentsToDatasource(commentArray: commentArray)
             self.isWaitingForResponse = false
             self.tableView.reloadData()
             self.scrollToBottom()
@@ -98,6 +98,16 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         // Write more to here if you want.
     }
     
+    private func addCommentsToDatasource(commentArray: [Comment]){
+        for comment in commentArray{
+            if let replies = comment.replies, replies.count > 0{
+                print("===SHOULD DISPLAY REPLY ALTERNATIVES===")
+            }else{
+                self.dataSource.addNewCommentObject(comment: comment)
+            }
+        }
+    }
+    
     @IBAction func didPressSend(_ sender: Any) {
         if let message = textEditor.text{
             if message != ""{
@@ -108,13 +118,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 self.tableView.reloadData()
                 
                 apiService.performTextRequest(message: message, success: { (commentArray) in
-                    for comment in commentArray{
-                        if let replies = comment.replies, replies.count > 0{
-                            print("===SHOULD DISPLAY REPLY ALTERNATIVES===")
-                        }else{
-                            self.dataSource.addNewCommentObject(comment: comment)
-                        }
-                    }
+                    self.addCommentsToDatasource(commentArray: commentArray)
                     self.isWaitingForResponse = false
                     self.tableView.reloadData()
                 }, failure: {
