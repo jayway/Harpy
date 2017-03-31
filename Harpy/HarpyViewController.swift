@@ -209,7 +209,6 @@ extension HarpyViewController {
                         scrollBottomConstant.constant = scrollBottomConstant.constant + heightOffset
                         self.view.layoutIfNeeded()
                         self.tableView.contentOffset = CGPoint(x: 0, y: max(0, height - self.tableView.bounds.height))
-
         },
                        completion: { (completed) in
                         self.scrollToBottom()
