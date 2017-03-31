@@ -239,7 +239,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         }else if comment.isServerResponse{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentLeft", for: indexPath) as! CommentTableViewCell
             cell.commentLabel.text = comment.commentString
-            if (indexPath.row > 0) {
+            if indexPath.row > 0 {
                 let previousComment = dataSource.comments[indexPath.row-1]
                 if previousComment.isServerResponse {
                     cell.topMargin.constant = 0
