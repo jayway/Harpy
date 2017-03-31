@@ -10,6 +10,7 @@ import UIKit
 import IBAnimatable
 class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, BankIDActionDelegate {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var answersContainerView: UIView!
     @IBOutlet weak var answersStackView: AnimatableStackView!
     @IBOutlet weak var textEditorBackground: UIView!
     @IBOutlet weak var textEditor: UITextField!
@@ -17,8 +18,6 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var sendButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputContainerBottomConstraint: NSLayoutConstraint!
-    
-    
     
     static let BANKID_NOTIFICATION = "bankIdWasVerified"
     
@@ -115,7 +114,9 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                     self.answersStackView.duration = 1
                     self.answersStackView.slide(.in, direction: .up)
                 }
-                
+                self.view.setNeedsLayout()
+                self.view.layoutIfNeeded()
+                scrollToBottom()
             }else{
                 self.dataSource.addNewCommentObject(comment: comment)
             }
@@ -228,6 +229,9 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         
     }
 
+    override func viewDidLayoutSubviews() {
+        tableView.contentInset = UIEdgeInsetsMake(60, 0, self.answersContainerView.frame.height, 0)
+    }
 
 }
 
