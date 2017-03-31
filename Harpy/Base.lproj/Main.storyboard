@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8zt-83-Qtp">
-                                <rect key="frame" x="0.0" y="60" width="320" height="444"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentRight" id="qqK-6I-uoc" customClass="CommentTableViewCell" customModule="Harpy" customModuleProvider="target">
@@ -340,7 +340,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingvar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBt-Pj-PYu">
-                                        <rect key="frame" x="134.5" y="28" width="51.5" height="22"/>
+                                        <rect key="frame" x="135" y="28" width="51.5" height="22"/>
                                         <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
                                         <color key="textColor" red="0.20392156862745098" green="0.20784313725490194" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -360,7 +360,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="49m-GC-4Kt" firstAttribute="bottom" secondItem="8zt-83-Qtp" secondAttribute="top" id="4ZV-hI-70t"/>
                             <constraint firstItem="8zt-83-Qtp" firstAttribute="bottom" secondItem="W4I-UN-hr5" secondAttribute="top" id="EwW-27-kxB"/>
                             <constraint firstAttribute="trailing" secondItem="G4J-1R-cVw" secondAttribute="trailing" id="F3c-DH-Cxu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="W4I-UN-hr5" secondAttribute="bottom" id="JFK-Yh-hdo"/>
@@ -369,6 +368,7 @@
                             <constraint firstItem="49m-GC-4Kt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SdW-D0-6u1"/>
                             <constraint firstItem="8zt-83-Qtp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tes-RS-cqC"/>
                             <constraint firstItem="W4I-UN-hr5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Usm-lG-X9f"/>
+                            <constraint firstItem="8zt-83-Qtp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="hzq-Zl-xlj"/>
                             <constraint firstItem="49m-GC-4Kt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="i7n-gB-HdQ"/>
                             <constraint firstItem="49m-GC-4Kt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mf6-OW-DgX"/>
                             <constraint firstItem="8zt-83-Qtp" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="oXA-zS-hCC"/>
