@@ -209,7 +209,7 @@
                                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0A-eQ-Cn8" userLabel="BankIdButtonContainer" customClass="AnimatableView" customModule="IBAnimatable">
                                                     <rect key="frame" x="8" y="83.5" width="188" height="44"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bankid_ico.png" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-4E-KVV">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bankid_ico" translatesAutoresizingMaskIntoConstraints="NO" id="aOh-4E-KVV">
                                                             <rect key="frame" x="10" y="10" width="24" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="24" id="5Gb-3G-CqF"/>
@@ -315,7 +315,7 @@
                                             <constraint firstAttribute="width" id="a9x-gd-ffB"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
-                                        <state key="normal" image="send_ico.png">
+                                        <state key="normal" image="send_ico">
                                             <color key="titleColor" red="0.92549019610000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -349,8 +349,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyo-FL-WBX">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingvar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBt-Pj-PYu">
-                                        <rect key="frame" x="135" y="28" width="51.5" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IKANO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBt-Pj-PYu">
+                                        <rect key="frame" x="132" y="28" width="57" height="22"/>
                                         <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
                                         <color key="textColor" red="0.20392156862745098" green="0.20784313725490194" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -402,7 +402,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bankid_ico.png" width="24" height="24"/>
-        <image name="send_ico.png" width="22" height="20"/>
+        <image name="bankid_ico" width="24" height="24"/>
+        <image name="send_ico" width="22" height="20"/>
     </resources>
 </document>
