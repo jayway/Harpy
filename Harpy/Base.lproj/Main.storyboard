@@ -282,10 +282,10 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4J-1R-cVw">
-                                <rect key="frame" x="0.0" y="492" width="320" height="20"/>
+                                <rect key="frame" x="300" y="492" width="20" height="20"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UVC-wi-0k6" customClass="AnimatableStackView" customModule="IBAnimatable">
-                                        <rect key="frame" x="10" y="10" width="300" height="0.0"/>
+                                        <rect key="frame" x="10" y="10" width="0.0" height="0.0"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </stackView>
                                 </subviews>
@@ -293,6 +293,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" priority="100" id="3p8-MI-dhk"/>
                                     <constraint firstAttribute="bottom" secondItem="UVC-wi-0k6" secondAttribute="bottom" constant="10" id="6ZQ-rt-eZ8"/>
+                                    <constraint firstAttribute="width" priority="100" id="GBp-Zp-74g"/>
                                     <constraint firstItem="UVC-wi-0k6" firstAttribute="top" secondItem="G4J-1R-cVw" secondAttribute="top" constant="10" id="No0-p3-jZb"/>
                                     <constraint firstItem="UVC-wi-0k6" firstAttribute="leading" secondItem="G4J-1R-cVw" secondAttribute="leading" constant="10" id="jLS-54-mYL"/>
                                     <constraint firstAttribute="trailing" secondItem="UVC-wi-0k6" secondAttribute="trailing" constant="10" id="waT-Qk-MJu"/>
@@ -351,7 +352,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingvar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBt-Pj-PYu">
-                                        <rect key="frame" x="134.5" y="28" width="51.5" height="22"/>
+                                        <rect key="frame" x="135" y="28" width="51.5" height="22"/>
                                         <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
                                         <color key="textColor" red="0.20392156862745098" green="0.20784313725490194" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -374,7 +375,6 @@
                             <constraint firstItem="8zt-83-Qtp" firstAttribute="bottom" secondItem="W4I-UN-hr5" secondAttribute="top" id="EwW-27-kxB"/>
                             <constraint firstAttribute="trailing" secondItem="G4J-1R-cVw" secondAttribute="trailing" id="F3c-DH-Cxu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="W4I-UN-hr5" secondAttribute="bottom" id="JFK-Yh-hdo"/>
-                            <constraint firstItem="G4J-1R-cVw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Msd-zR-6NL"/>
                             <constraint firstItem="W4I-UN-hr5" firstAttribute="top" secondItem="G4J-1R-cVw" secondAttribute="bottom" id="Qha-Qu-tmX"/>
                             <constraint firstItem="49m-GC-4Kt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SdW-D0-6u1"/>
                             <constraint firstItem="8zt-83-Qtp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tes-RS-cqC"/>
