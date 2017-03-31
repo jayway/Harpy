@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8zt-83-Qtp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="512"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentRight" id="qqK-6I-uoc" customClass="CommentTableViewCell" customModule="Harpy" customModuleProvider="target">
@@ -272,7 +272,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4J-1R-cVw">
-                                <rect key="frame" x="0.0" y="484" width="320" height="20"/>
+                                <rect key="frame" x="0.0" y="492" width="320" height="20"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UVC-wi-0k6" customClass="AnimatableStackView" customModule="IBAnimatable">
                                         <rect key="frame" x="10" y="10" width="300" height="0.0"/>
@@ -289,10 +289,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W4I-UN-hr5" customClass="AnimatableView" customModule="IBAnimatable">
-                                <rect key="frame" x="0.0" y="504" width="320" height="64"/>
+                                <rect key="frame" x="0.0" y="512" width="320" height="56"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Say something..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Byi-BF-agX">
-                                        <rect key="frame" x="16" y="0.0" width="280" height="64"/>
+                                        <rect key="frame" x="16" y="0.0" width="280" height="56"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="IkanoSans-Light" family="Ikano Sans" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -301,10 +301,11 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYQ-5k-kuM">
-                                        <rect key="frame" x="304" y="21" width="0.0" height="22"/>
+                                        <rect key="frame" x="304" y="17" width="0.0" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" id="a9x-gd-ffB"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
                                         <state key="normal" image="send_ico.png">
                                             <color key="titleColor" red="0.92549019610000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -318,7 +319,7 @@
                                     <constraint firstItem="Byi-BF-agX" firstAttribute="centerY" secondItem="W4I-UN-hr5" secondAttribute="centerY" id="Icd-3L-hVH"/>
                                     <constraint firstItem="Byi-BF-agX" firstAttribute="trailing" secondItem="kYQ-5k-kuM" secondAttribute="leading" constant="-8" id="P3e-hD-ufF"/>
                                     <constraint firstItem="kYQ-5k-kuM" firstAttribute="centerY" secondItem="W4I-UN-hr5" secondAttribute="centerY" id="RNY-wz-3Ov"/>
-                                    <constraint firstAttribute="height" constant="64" id="TLo-SC-lx4"/>
+                                    <constraint firstAttribute="height" constant="56" id="TLo-SC-lx4"/>
                                     <constraint firstItem="Byi-BF-agX" firstAttribute="height" secondItem="W4I-UN-hr5" secondAttribute="height" id="Z5y-Dd-fIF"/>
                                     <constraint firstAttribute="trailing" secondItem="kYQ-5k-kuM" secondAttribute="trailing" constant="16" id="o94-v9-kYX"/>
                                     <constraint firstItem="Byi-BF-agX" firstAttribute="leading" secondItem="W4I-UN-hr5" secondAttribute="leading" constant="16" id="zEE-Ph-3r3"/>
@@ -340,7 +341,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingvar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBt-Pj-PYu">
-                                        <rect key="frame" x="134.5" y="28" width="51.5" height="22"/>
+                                        <rect key="frame" x="135" y="28" width="51.5" height="22"/>
                                         <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
                                         <color key="textColor" red="0.20392156862745098" green="0.20784313725490194" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
