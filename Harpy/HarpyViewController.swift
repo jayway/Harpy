@@ -18,8 +18,8 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var sendButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputContainerBottomConstraint: NSLayoutConstraint!
     
-    
-    
+    var ingvarView: IngvarView?
+    var hasBeenPresentedInitially = false
     static let BANKID_NOTIFICATION = "bankIdWasVerified"
     
     var dataSource: HarpyDataSource!
@@ -57,10 +57,23 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let ingvarView = IngvarView.instanceFromNib()
-        ingvarView!.frame = self.view.frame
-        self.view.addSubview(ingvarView!)
-        ingvarView!.startAnimating()
+        if !hasBeenPresentedInitially{
+            let ingvarView = IngvarView.instanceFromNib()
+            ingvarView!.frame = self.view.frame
+            self.view.addSubview(ingvarView!)
+            self.ingvarView = ingvarView
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if !hasBeenPresentedInitially{
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
+                self.ingvarView?.startAnimating()
+            })
+            
+            self.hasBeenPresentedInitially = true
+        }
     }
     
     deinit {

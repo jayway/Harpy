@@ -25,7 +25,7 @@ class IngvarView: UIView {
         let bubbleDuration: TimeInterval = 0.65
         let ingvarRemoveDuration: TimeInterval = 2.2
         let removeDuration: TimeInterval = 3
-        
+
         UIView.animate(withDuration: bubbleDuration, delay: 0, options: [.curveEaseInOut], animations: {
             self.ingvarImage.transform = CGAffineTransform(scaleX: bigScale, y: bigScale)
         }) { (completed) in
