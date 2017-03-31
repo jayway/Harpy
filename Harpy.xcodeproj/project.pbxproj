@@ -30,6 +30,15 @@
 		FFD774E51E8D593300F4CA90 /* send_ico.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774E21E8D593300F4CA90 /* send_ico.png */; };
 		FFD774E61E8D593300F4CA90 /* send_ico@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774E31E8D593300F4CA90 /* send_ico@2x.png */; };
 		FFD774E71E8D593300F4CA90 /* send_ico@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774E41E8D593300F4CA90 /* send_ico@3x.png */; };
+		FFD774E91E8E730A00F4CA90 /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774E81E8E730A00F4CA90 /* appicon.png */; };
+		FFD774EC1E8E752A00F4CA90 /* appicon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774EA1E8E752A00F4CA90 /* appicon-60@2x.png */; };
+		FFD774ED1E8E752A00F4CA90 /* appicon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774EB1E8E752A00F4CA90 /* appicon-60@3x.png */; };
+		FFD774F11E8E760B00F4CA90 /* ingvar_ico.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774EE1E8E760B00F4CA90 /* ingvar_ico.png */; };
+		FFD774F21E8E760B00F4CA90 /* ingvar_ico@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774EF1E8E760B00F4CA90 /* ingvar_ico@2x.png */; };
+		FFD774F31E8E760B00F4CA90 /* ingvar_ico@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774F01E8E760B00F4CA90 /* ingvar_ico@3x.png */; };
+		FFD774F71E8E770900F4CA90 /* bankid_ico.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774F41E8E770900F4CA90 /* bankid_ico.png */; };
+		FFD774F81E8E770900F4CA90 /* bankid_ico@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774F51E8E770900F4CA90 /* bankid_ico@2x.png */; };
+		FFD774F91E8E770900F4CA90 /* bankid_ico@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD774F61E8E770900F4CA90 /* bankid_ico@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +91,15 @@
 		FFD774E21E8D593300F4CA90 /* send_ico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = send_ico.png; path = Images/send_ico.png; sourceTree = "<group>"; };
 		FFD774E31E8D593300F4CA90 /* send_ico@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "send_ico@2x.png"; path = "Images/send_ico@2x.png"; sourceTree = "<group>"; };
 		FFD774E41E8D593300F4CA90 /* send_ico@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "send_ico@3x.png"; path = "Images/send_ico@3x.png"; sourceTree = "<group>"; };
+		FFD774E81E8E730A00F4CA90 /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appicon.png; path = Images/appicon.png; sourceTree = "<group>"; };
+		FFD774EA1E8E752A00F4CA90 /* appicon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-60@2x.png"; path = "Images/appicon-60@2x.png"; sourceTree = "<group>"; };
+		FFD774EB1E8E752A00F4CA90 /* appicon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "appicon-60@3x.png"; path = "Images/appicon-60@3x.png"; sourceTree = "<group>"; };
+		FFD774EE1E8E760B00F4CA90 /* ingvar_ico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ingvar_ico.png; path = Images/ingvar_ico.png; sourceTree = "<group>"; };
+		FFD774EF1E8E760B00F4CA90 /* ingvar_ico@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ingvar_ico@2x.png"; path = "Images/ingvar_ico@2x.png"; sourceTree = "<group>"; };
+		FFD774F01E8E760B00F4CA90 /* ingvar_ico@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ingvar_ico@3x.png"; path = "Images/ingvar_ico@3x.png"; sourceTree = "<group>"; };
+		FFD774F41E8E770900F4CA90 /* bankid_ico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bankid_ico.png; path = Images/bankid_ico.png; sourceTree = "<group>"; };
+		FFD774F51E8E770900F4CA90 /* bankid_ico@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bankid_ico@2x.png"; path = "Images/bankid_ico@2x.png"; sourceTree = "<group>"; };
+		FFD774F61E8E770900F4CA90 /* bankid_ico@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bankid_ico@3x.png"; path = "Images/bankid_ico@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +271,15 @@
 		FFD774E11E8D590300F4CA90 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FFD774F41E8E770900F4CA90 /* bankid_ico.png */,
+				FFD774F51E8E770900F4CA90 /* bankid_ico@2x.png */,
+				FFD774F61E8E770900F4CA90 /* bankid_ico@3x.png */,
+				FFD774EE1E8E760B00F4CA90 /* ingvar_ico.png */,
+				FFD774EF1E8E760B00F4CA90 /* ingvar_ico@2x.png */,
+				FFD774F01E8E760B00F4CA90 /* ingvar_ico@3x.png */,
+				FFD774E81E8E730A00F4CA90 /* appicon.png */,
+				FFD774EA1E8E752A00F4CA90 /* appicon-60@2x.png */,
+				FFD774EB1E8E752A00F4CA90 /* appicon-60@3x.png */,
 				FFD774E21E8D593300F4CA90 /* send_ico.png */,
 				FFD774E31E8D593300F4CA90 /* send_ico@2x.png */,
 				FFD774E41E8D593300F4CA90 /* send_ico@3x.png */,
@@ -372,16 +399,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD774F31E8E760B00F4CA90 /* ingvar_ico@3x.png in Resources */,
 				FFD774E71E8D593300F4CA90 /* send_ico@3x.png in Resources */,
 				1A355EFC1E8E574600550A96 /* AnswerButton.xib in Resources */,
 				FFD774E61E8D593300F4CA90 /* send_ico@2x.png in Resources */,
+				FFD774EC1E8E752A00F4CA90 /* appicon-60@2x.png in Resources */,
+				FFD774ED1E8E752A00F4CA90 /* appicon-60@3x.png in Resources */,
 				F72554501E5C5300000F88E2 /* LaunchScreen.storyboard in Resources */,
+				FFD774F21E8E760B00F4CA90 /* ingvar_ico@2x.png in Resources */,
 				FFD774E51E8D593300F4CA90 /* send_ico.png in Resources */,
 				FFD774DF1E8D568A00F4CA90 /* ikanosans-light-webfont.ttf in Resources */,
+				FFD774F11E8E760B00F4CA90 /* ingvar_ico.png in Resources */,
+				FFD774E91E8E730A00F4CA90 /* appicon.png in Resources */,
 				F725544D1E5C5300000F88E2 /* Assets.xcassets in Resources */,
+				FFD774F71E8E770900F4CA90 /* bankid_ico.png in Resources */,
+				FFD774F91E8E770900F4CA90 /* bankid_ico@3x.png in Resources */,
 				FFD774E01E8D568D00F4CA90 /* ikanosans-bold-webfont.ttf in Resources */,
 				F725547B1E5C5570000F88E2 /* Podfile in Resources */,
 				F725544B1E5C5300000F88E2 /* Main.storyboard in Resources */,
+				FFD774F81E8E770900F4CA90 /* bankid_ico@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

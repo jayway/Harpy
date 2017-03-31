@@ -22,4 +22,10 @@ class HarpyDataSource{
     func addNewCommentObject(comment: Comment){
         comments.append(comment)
     }
+    
+    func removeAllBankRequest() {
+        comments.forEach { comment in
+            comment.isBankIdRequest = false
+        }
+    }
 }

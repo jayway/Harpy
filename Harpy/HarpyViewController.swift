@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import IBAnimatable
 class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, BankIDActionDelegate {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var answersStackView: UIStackView!
+    @IBOutlet weak var answersStackView: AnimatableStackView!
     @IBOutlet weak var textEditorBackground: UIView!
     @IBOutlet weak var textEditor: UITextField!
     @IBOutlet weak var titleHeader: UIView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var sendButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputContainerBottomConstraint: NSLayoutConstraint!
+    
+    
     
     static let BANKID_NOTIFICATION = "bankIdWasVerified"
     
@@ -64,6 +67,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     func bankIdVerified() {
         let message = "butterstick"
         self.dataSource.addNewComment(message: "Confirmed with BankID")
+        self.dataSource.removeAllBankRequest()
         self.isWaitingForResponse = true
         self.tableView.reloadData()
         apiService.performTextRequest(message: message, success: { (commentArray) in
@@ -103,7 +107,15 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     private func addCommentsToDatasource(commentArray: [Comment]){
         for comment in commentArray{
             if let replies = comment.replies, replies.count > 0{
-                replies.forEach { self.addAnswerButton(text: $0) }
+                self.answersStackView.isHidden = true
+                self.answersStackView.duration = 0
+                self.answersStackView.slide(.out, direction: .down){
+                    replies.forEach { self.addAnswerButton(text: $0) }
+                    self.answersStackView.isHidden = false
+                    self.answersStackView.duration = 1
+                    self.answersStackView.slide(.in, direction: .up)
+                }
+                
             }else{
                 self.dataSource.addNewCommentObject(comment: comment)
             }
@@ -243,7 +255,6 @@ extension HarpyViewController {
                         scrollBottomConstant.constant = scrollBottomConstant.constant + heightOffset
                         self.view.layoutIfNeeded()
                         self.tableView.contentOffset = CGPoint(x: 0, y: max(0, height - self.tableView.bounds.height))
-
         },
                        completion: { (completed) in
                         self.scrollToBottom()
