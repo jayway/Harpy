@@ -56,6 +56,13 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         view.tintColor = UIColor.init(hexString: "EC0000")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let ingvarView = IngvarView.instanceFromNib()
+        ingvarView?.frame = self.view.frame
+        self.view.addSubview(ingvarView)
+        ingvarView?.startAnimating()
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
