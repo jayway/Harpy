@@ -12,11 +12,11 @@ class HarpyDataSource{
     var comments = [Comment]()
     
     init(){
-        comments.append(Comment(date: Date(), commentString: "Hey! What do you need help with today?", isServerResponse: true, isBankIdRequest: false))
+        comments.append(Comment(date: Date(), commentString: "Hey! What do you need help with today?", isServerResponse: true, isBankIdRequest: false, replies: nil))
     }
     
     func addNewComment(message: String){
-        comments.append(Comment(date: Date(), commentString: message, isServerResponse: false, isBankIdRequest: false))
+        comments.append(Comment(date: Date(), commentString: message, isServerResponse: false, isBankIdRequest: false, replies: nil))
     }
     
     func addNewCommentObject(comment: Comment){

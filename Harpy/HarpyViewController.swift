@@ -87,8 +87,14 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 self.isWaitingForResponse = true
                 self.tableView.reloadData()
                 
-                apiService.performTextRequest(message: message, success: { (comment) in
-                    self.dataSource.addNewCommentObject(comment: comment)
+                apiService.performTextRequest(message: message, success: { (commentArray) in
+                    for comment in commentArray{
+                        if let replies = comment.replies, replies.count > 0{
+                            print("===SHOULD DISPLAY REPLY ALTERNATIVES===")
+                        }else{
+                            self.dataSource.addNewCommentObject(comment: comment)
+                        }
+                    }
                     self.isWaitingForResponse = false
                     self.tableView.reloadData()
                 }, failure: {

@@ -15,21 +15,25 @@ class APIAIService{
         
     }
     
-    func performTextRequest(message: String, success: @escaping (Comment) -> Void, failure: () -> ()){
+    func performTextRequest(message: String, success: @escaping ([Comment]) -> Void, failure: () -> ()){
         let textRequest =  (UIApplication.shared.delegate as! AppDelegate).apiAI?.textRequest()
         textRequest?.query = message
         
         textRequest?.setCompletionBlockSuccess({ (request, response) in
             print(response ?? "No response")
             if let json = response as? [String:Any]{
-                let params = self.getParamsFromJSON(json: json)
-                print(params)
-                var commentString = ""
-                if let message = params.message{
-                    commentString = message
+                let paramsArray = self.getParamsFromJSON(json: json)
+                print(paramsArray)
+                var commentArray = [Comment]()
+                for params in paramsArray{
+                    var commentString = ""
+                    if let message = params.message{
+                        commentString = message
+                    }
+                    commentArray.append(Comment(date: Date(), commentString: commentString, isServerResponse: true, isBankIdRequest: params.isBankIdRequest, replies: params.replies))
                 }
                 DispatchQueue.main.async {
-                    success(Comment(date: Date(), commentString: commentString, isServerResponse: true, isBankIdRequest: params.isBankIdRequest))
+                    success(commentArray)
                 }
             }
         }, failure: { (request, error) in
@@ -39,32 +43,42 @@ class APIAIService{
         
     }
     
-    private func getParamsFromJSON(json: [String:Any]) -> (name: String?, office: String?, message: String?, isBankIdRequest: Bool?){
+    private func getParamsFromJSON(json: [String:Any]) -> [(message: String?, isBankIdRequest: Bool?, replies: [String]?)]{
         var message: String?
         //TODO: get office
-        var office: String?
-        var name: String?
         var isBankIdRequest: Bool?
+        
         if let result = json["result"] as? [String:Any]{
             if let fulfillment = result["fulfillment"] as? [String:Any]{
-                if let speech = fulfillment["speech"] as? String{
+                if let messagesArray = fulfillment["messages"] as? [[String:Any]], messagesArray.count > 1{
+                    var returnArray = [(message: String?, isBankIdRequest: Bool?, replies: [String]?)]()
+                    for m in messagesArray{
+                        var messageString = "Unknown comment"
+                        var repliesArray: [String]?
+                        if let speech = m["speech"] as? String{
+                            messageString = speech
+                        }
+                        if let replies = m["replies"] as? [String]{
+                            repliesArray = replies
+                        }
+                        returnArray.append((message: messageString, isBankIdRequest: false, replies: repliesArray))
+                    }
+                    return returnArray
+                }else if let speech = fulfillment["speech"] as? String{
                     message = speech
                 }
             }
-            if let parameters = result["parameters"] as? [String:Any]{
-                if let n = parameters["name"] as? String{
-                    name = n
-                }
-                if let c = parameters["city"] as? String{
-                    office = c
-                }
-                if let action = result["action"] as? String{
-                    if action == "bankid_block" {
-                        isBankIdRequest = true
-                    }
+            if let action = result["action"] as? String{
+                if action == "bankid_block" {
+                    isBankIdRequest = true
                 }
             }
+
         }
-        return (name: name, office: office, message: message, isBankIdRequest: isBankIdRequest)
+        return [(message: message, isBankIdRequest: isBankIdRequest, replies: nil)]
+    }
+    
+    private func getMessageAndAction(json: [String:Any]){
+        
     }
 }
