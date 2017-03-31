@@ -116,7 +116,10 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 }
                 self.view.setNeedsLayout()
                 self.view.layoutIfNeeded()
-                scrollToBottom()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                    self.scrollToBottom()
+                })
             }else{
                 self.dataSource.addNewCommentObject(comment: comment)
             }
