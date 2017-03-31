@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import IBAnimatable
 class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, BankIDActionDelegate {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var answersStackView: UIStackView!
+    @IBOutlet weak var answersStackView: AnimatableStackView!
     @IBOutlet weak var textEditorBackground: UIView!
     @IBOutlet weak var textEditor: UITextField!
     @IBOutlet weak var titleHeader: UIView!
@@ -103,11 +104,41 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     private func addCommentsToDatasource(commentArray: [Comment]){
         for comment in commentArray{
             if let replies = comment.replies, replies.count > 0{
-                print("===SHOULD DISPLAY REPLY ALTERNATIVES===")
+                self.answersStackView.isHidden = true
+                self.answersStackView.duration = 0
+                self.answersStackView.slide(.out, direction: .down){
+                    replies.forEach { self.addAnswerButton(text: $0) }
+                    self.answersStackView.isHidden = false
+                    self.answersStackView.duration = 1
+                    self.answersStackView.slide(.in, direction: .up)
+                }
+                
             }else{
                 self.dataSource.addNewCommentObject(comment: comment)
             }
         }
+    }
+    
+    private func addAnswerButton(text: String) {
+        let button = AnswerButton.instanceFromNib()!
+        button.label.text = text
+        button.addTarget(self, action: #selector(pressedAnswerButton), for: .touchUpInside)
+        answersStackView.addArrangedSubview(button)
+    }
+    
+    func pressedAnswerButton(sender: AnswerButton) {
+        let message = sender.label.text!
+        self.dataSource.addNewComment(message: message)
+        self.isWaitingForResponse = true
+        self.tableView.reloadData()
+        apiService.performTextRequest(message: message, success: { (commentArray) in
+            self.addCommentsToDatasource(commentArray: commentArray)
+            self.isWaitingForResponse = false
+            self.tableView.reloadData()
+        }, failure: {
+            
+        })
+        self.answersStackView.subviews.forEach { $0.removeFromSuperview() }
     }
     
     @IBAction func didPressSend(_ sender: Any) {
