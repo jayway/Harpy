@@ -110,7 +110,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Xru-Ry-iSm" secondAttribute="trailing" constant="16" id="1lf-SQ-tAz"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Xru-Ry-iSm" secondAttribute="trailing" constant="80" id="1lf-SQ-tAz"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Xru-Ry-iSm" secondAttribute="bottom" constant="16" id="6Ug-hl-jga"/>
                                                 <constraint firstItem="QOG-tb-dad" firstAttribute="bottom" secondItem="Xru-Ry-iSm" secondAttribute="bottom" constant="12" id="8MQ-XW-KWH"/>
                                                 <constraint firstItem="Xru-Ry-iSm" firstAttribute="leading" secondItem="DsH-la-2nB" secondAttribute="leadingMargin" constant="16" id="FCW-8R-LhQ"/>
@@ -263,7 +263,7 @@
                                                 <constraint firstItem="4p7-It-Mr8" firstAttribute="leading" secondItem="Esi-s6-iTF" secondAttribute="leading" constant="-16" id="RDD-FY-olZ"/>
                                                 <constraint firstItem="Esi-s6-iTF" firstAttribute="leading" secondItem="vhs-gg-xTH" secondAttribute="leadingMargin" constant="16" id="RTo-jj-7Sc"/>
                                                 <constraint firstItem="U7G-Bw-Y3N" firstAttribute="centerY" secondItem="v0A-eQ-Cn8" secondAttribute="centerY" id="Wua-8a-7q9"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Esi-s6-iTF" secondAttribute="trailing" constant="16" id="eyE-Yg-aZB"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Esi-s6-iTF" secondAttribute="trailing" constant="80" id="eyE-Yg-aZB"/>
                                                 <constraint firstItem="Esi-s6-iTF" firstAttribute="top" secondItem="vhs-gg-xTH" secondAttribute="topMargin" constant="16.5" id="hAG-Ww-t8o"/>
                                                 <constraint firstItem="4p7-It-Mr8" firstAttribute="bottom" secondItem="Esi-s6-iTF" secondAttribute="bottom" constant="12" id="yIj-EH-P6I"/>
                                             </constraints>
