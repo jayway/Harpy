@@ -171,18 +171,19 @@ extension HarpyViewController {
         }else{
             self.removeGestureRecognizer()
         }
-        
-        UIView.animate(withDuration: duration.doubleValue,
-                                   delay: 0,
-                                   options: UIViewAnimationOptions(rawValue: UInt(curve.intValue << 16)),
-                                   animations: { () in
-                                    scrollBottomConstant.constant = scrollBottomConstant.constant + heightOffset
-                                    self.view.layoutIfNeeded()
+            let height = tableView.contentSize.height
+               UIView.animate(withDuration: duration.doubleValue,
+                       delay: 0,
+                       options: UIViewAnimationOptions(rawValue: UInt(curve.intValue << 16)),
+                       animations: { () in
+                        scrollBottomConstant.constant = scrollBottomConstant.constant + heightOffset
+                        self.view.layoutIfNeeded()
+                        self.tableView.contentOffset = CGPoint(x: 0, y: max(0, height - self.tableView.bounds.height))
+
         },
-                                   completion: { (completed) in
-                                    self.scrollToBottom()
-                                    
-                                    
+                       completion: { (completed) in
+                        self.scrollToBottom()
+                        
         })
     }
 }
