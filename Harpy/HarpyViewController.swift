@@ -12,9 +12,12 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var answersStackView: UIStackView!
     @IBOutlet weak var textEditorBackground: UIView!
     @IBOutlet weak var textEditor: UITextField!
+    @IBOutlet weak var titleHeader: UIView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var sendButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputContainerBottomConstraint: NSLayoutConstraint!
+    
+    static let BANKID_NOTIFICATION = "bankIdWasVerified"
     
     var dataSource: HarpyDataSource!
     var apiService: APIAIService!
@@ -28,17 +31,24 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         apiService = APIAIService()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
+        tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        
         tapGestureRecognizor = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         self.view.addGestureRecognizer(tapGestureRecognizor)
         tapGestureRecognizor.isEnabled = false
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillChangeFrameNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(bankIdVerified), name: NSNotification.Name(rawValue: HarpyViewController.BANKID_NOTIFICATION), object: nil)
+        
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(openBankID))
         view.addGestureRecognizer(swipe)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            self.addAlternative()
-            self.addAlternative()
-            self.addAlternative()
-        }
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+
+        blurEffectView.frame = titleHeader.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        titleHeader.addSubview(blurEffectView)
     }
     
     deinit {
@@ -47,6 +57,22 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     func openBankID() {
         UIApplication.shared.openURL(URL(string: "http://mayholm.com/bankid/mock")!)
+    }
+    
+    func bankIdVerified() {
+        let message = "butterstick"
+        self.dataSource.addNewComment(message: "Confirmed with BankID")
+        self.isWaitingForResponse = true
+        self.tableView.reloadData()
+        apiService.performTextRequest(message: message, success: { (comment) in
+            self.isWaitingForResponse = false
+            self.dataSource.addNewCommentObject(comment: comment)
+            self.isWaitingForResponse = false
+            self.tableView.reloadData()
+            self.scrollToBottom()
+        }, failure: {
+            
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -175,18 +201,19 @@ extension HarpyViewController {
         }else{
             self.removeGestureRecognizer()
         }
-        
-        UIView.animate(withDuration: duration.doubleValue,
-                                   delay: 0,
-                                   options: UIViewAnimationOptions(rawValue: UInt(curve.intValue << 16)),
-                                   animations: { () in
-                                    scrollBottomConstant.constant = scrollBottomConstant.constant + heightOffset
-                                    self.view.layoutIfNeeded()
+            let height = tableView.contentSize.height
+               UIView.animate(withDuration: duration.doubleValue,
+                       delay: 0,
+                       options: UIViewAnimationOptions(rawValue: UInt(curve.intValue << 16)),
+                       animations: { () in
+                        scrollBottomConstant.constant = scrollBottomConstant.constant + heightOffset
+                        self.view.layoutIfNeeded()
+                        self.tableView.contentOffset = CGPoint(x: 0, y: max(0, height - self.tableView.bounds.height))
+
         },
-                                   completion: { (completed) in
-                                    self.scrollToBottom()
-                                    
-                                    
+                       completion: { (completed) in
+                        self.scrollToBottom()
+                        
         })
     }
 }
