@@ -28,7 +28,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         apiService = APIAIService()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
-        tableView.contentInset = UIEdgeInsetsMake(titleHeader.frame.height, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
         
         tapGestureRecognizor = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         self.view.addGestureRecognizer(tapGestureRecognizor)
