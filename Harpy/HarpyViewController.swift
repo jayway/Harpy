@@ -362,11 +362,12 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 self.endWriting()
                 self.isWaitingForResponse = true
                 self.tableView.reloadData()
-                
+                self.scrollToBottom()
                 apiService.performTextRequest(message: message, success: { (commentArray) in
                     self.addCommentsToDatasource(commentArray: commentArray)
                     self.isWaitingForResponse = false
                     self.tableView.reloadData()
+                    self.scrollToBottom()
                 }, failure: {
                     
                 })
@@ -375,10 +376,12 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     }
     
     fileprivate func scrollToBottom(){
-        var lastItem: IndexPath!
-        let numberOfRows = self.tableView.numberOfRows(inSection: 0)
-        lastItem = IndexPath(item: numberOfRows - 1, section: 0)
-        self.tableView.scrollToRow(at: lastItem, at: .bottom, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) {
+            let numberOfRows = self.tableView.numberOfRows(inSection: 0)
+            let lastItem = IndexPath(row: numberOfRows - 1, section: 0)
+            self.tableView.scrollToRow(at: lastItem, at: .bottom, animated: false)
+        }
     }
     
     private func startWriting(){
