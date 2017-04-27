@@ -165,6 +165,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             self.addCommentsToDatasource(commentArray: commentArray)
             self.isWaitingForResponse = false
             self.tableView.reloadData()
+            self.scrollToBottom()
         }, failure: {
             
         })
