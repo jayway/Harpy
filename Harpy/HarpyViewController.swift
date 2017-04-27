@@ -139,6 +139,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 }
                 self.view.setNeedsLayout()
                 self.view.layoutIfNeeded()
+                textEditor.isHidden = true
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
                     self.scrollToBottom()
@@ -170,6 +171,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             
         })
         self.answersStackView.subviews.forEach { $0.removeFromSuperview() }
+        textEditor.isHidden = false
     }
     
     @IBAction func didPressSend(_ sender: Any) {
