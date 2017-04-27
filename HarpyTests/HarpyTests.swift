@@ -33,12 +33,12 @@ class HarpyTests: XCTestCase {
         }
     }
     
-    func testBackendRequest() {
-        
-        KPersonService.findPersonBy(name: "erik", office: "") { (people) in
-            print("Received \(people.count) people")
-        }
-        
-    }
+//    func testBackendRequest() {
+//        
+//        KPersonService.findPersonBy(name: "erik", office: "") { (people) in
+//            print("Received \(people.count) people")
+//        }
+//        
+//    }
     
 }
