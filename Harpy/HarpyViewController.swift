@@ -185,13 +185,9 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     }
     
     func checkForActionPhrases() {
-        
-        
         var text = ""
         for segment in speechResult.bestTranscription.segments {
-            // Don't search until the transcription size is at least
-            // the size of the shortest phrase
-            if segment.substringRange.location >= 5 {
+            if segment.substringRange.location >= 2 {
                 // Separate segments to single words
                 text = speechResult.bestTranscription.formattedString
             }
@@ -322,12 +318,14 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 self.view.setNeedsLayout()
                 self.view.layoutIfNeeded()
                 textEditor.isHidden = true
+                    self.dataSource.speakLastComment()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
                     self.scrollToBottom()
                 })
             }else{
                 self.dataSource.addNewCommentObject(comment: comment)
+                self.dataSource.speakLastComment()
             }
         }
     }
