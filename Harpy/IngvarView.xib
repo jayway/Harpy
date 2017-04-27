@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ingvar_ico" translatesAutoresizingMaskIntoConstraints="NO" id="FUh-Ov-Q1w">
-                    <rect key="frame" x="87" y="218.5" width="200" height="230"/>
+                    <rect key="frame" x="87" y="233.5" width="200" height="200"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="pGD-Va-tLD"/>
                     </constraints>
@@ -25,7 +25,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="FUh-Ov-Q1w" firstAttribute="width" secondItem="FUh-Ov-Q1w" secondAttribute="height" multiplier="576:660" id="0VH-BA-6qS"/>
+                <constraint firstItem="FUh-Ov-Q1w" firstAttribute="width" secondItem="FUh-Ov-Q1w" secondAttribute="height" multiplier="1:1" id="0VH-BA-6qS"/>
                 <constraint firstItem="FUh-Ov-Q1w" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9YQ-04-dWS"/>
                 <constraint firstItem="FUh-Ov-Q1w" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dB1-rs-MKm"/>
             </constraints>
@@ -35,6 +35,6 @@
         </view>
     </objects>
     <resources>
-        <image name="ingvar_ico" width="192" height="220"/>
+        <image name="ingvar_ico" width="341" height="341"/>
     </resources>
 </document>
