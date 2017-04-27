@@ -42,7 +42,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcO-6Q-oRa" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="234.5" y="12.5" width="77.5" height="45.5"/>
+                                                    <rect key="frame" x="238" y="12.5" width="74" height="45.5"/>
                                                     <color key="backgroundColor" red="0.92549019607843142" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -58,7 +58,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1L-3E-hBY" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="250.5" y="24.5" width="45.5" height="21.5"/>
+                                                    <rect key="frame" x="254" y="24.5" width="42" height="21.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="IkanoSans-Light" family="Ikano Sans" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -91,7 +91,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOG-tb-dad" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="8" y="12.5" width="77.5" height="45"/>
+                                                    <rect key="frame" x="8" y="12.5" width="74" height="45"/>
                                                     <color key="backgroundColor" red="0.94117647059999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -101,7 +101,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xru-Ry-iSm" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="24" y="24.5" width="45.5" height="21"/>
+                                                    <rect key="frame" x="24" y="24.5" width="42" height="21"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="IkanoSans-Light" family="Ikano Sans" pointSize="17"/>
                                                     <color key="textColor" red="0.20392156859999999" green="0.20784313730000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -174,7 +174,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4p7-It-Mr8" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="8" y="12.5" width="77.5" height="67"/>
+                                                    <rect key="frame" x="8" y="12.5" width="74" height="67"/>
                                                     <color key="backgroundColor" red="0.94117647059999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -184,7 +184,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esi-s6-iTF" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="24" y="24.5" width="45.5" height="43"/>
+                                                    <rect key="frame" x="24" y="24.5" width="42" height="43"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="IkanoSans-Light" family="Ikano Sans" pointSize="17"/>
                                                     <color key="textColor" red="0.20392156859999999" green="0.20784313730000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -218,14 +218,14 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open BankID" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E7-n1-M2v" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                            <rect key="frame" x="44" y="11.5" width="106.5" height="22"/>
+                                                            <rect key="frame" x="44" y="12.5" width="102" height="20"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
                                                             <color key="textColor" red="0.20392156859999999" green="0.20784313730000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1n-3P-AUC" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                            <rect key="frame" x="163" y="6.5" width="13" height="32.5"/>
+                                                            <rect key="frame" x="161" y="8" width="15" height="29.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="25"/>
                                                             <color key="textColor" red="0.92549019610000005" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -302,8 +302,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W4I-UN-hr5" customClass="AnimatableView" customModule="IBAnimatable">
                                 <rect key="frame" x="0.0" y="512" width="320" height="56"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dph-Fz-0ln">
+                                        <rect key="frame" x="8" y="11" width="30" height="34"/>
+                                        <connections>
+                                            <action selector="didTapMikeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rnQ-fk-Tlh"/>
+                                        </connections>
+                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Say something..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Byi-BF-agX">
-                                        <rect key="frame" x="16" y="0.0" width="280" height="56"/>
+                                        <rect key="frame" x="46" y="0.0" width="250" height="56"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="IkanoSans-Light" family="Ikano Sans" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -312,7 +318,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYQ-5k-kuM">
-                                        <rect key="frame" x="304" y="17" width="0.0" height="22"/>
+                                        <rect key="frame" x="304" y="18" width="0.0" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" id="a9x-gd-ffB"/>
                                         </constraints>
@@ -327,13 +333,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Dph-Fz-0ln" firstAttribute="leading" secondItem="W4I-UN-hr5" secondAttribute="leading" constant="8" id="7r2-Zr-vPc"/>
+                                    <constraint firstItem="Dph-Fz-0ln" firstAttribute="centerY" secondItem="W4I-UN-hr5" secondAttribute="centerY" id="BIk-R1-aMc"/>
                                     <constraint firstItem="Byi-BF-agX" firstAttribute="centerY" secondItem="W4I-UN-hr5" secondAttribute="centerY" id="Icd-3L-hVH"/>
                                     <constraint firstItem="Byi-BF-agX" firstAttribute="trailing" secondItem="kYQ-5k-kuM" secondAttribute="leading" constant="-8" id="P3e-hD-ufF"/>
                                     <constraint firstItem="kYQ-5k-kuM" firstAttribute="centerY" secondItem="W4I-UN-hr5" secondAttribute="centerY" id="RNY-wz-3Ov"/>
+                                    <constraint firstItem="Byi-BF-agX" firstAttribute="leading" secondItem="Dph-Fz-0ln" secondAttribute="trailing" constant="8" id="T7J-Um-vln"/>
                                     <constraint firstAttribute="height" constant="56" id="TLo-SC-lx4"/>
                                     <constraint firstItem="Byi-BF-agX" firstAttribute="height" secondItem="W4I-UN-hr5" secondAttribute="height" id="Z5y-Dd-fIF"/>
                                     <constraint firstAttribute="trailing" secondItem="kYQ-5k-kuM" secondAttribute="trailing" constant="16" id="o94-v9-kYX"/>
-                                    <constraint firstItem="Byi-BF-agX" firstAttribute="leading" secondItem="W4I-UN-hr5" secondAttribute="leading" constant="16" id="zEE-Ph-3r3"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -352,7 +360,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingvar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBt-Pj-PYu">
-                                        <rect key="frame" x="135" y="28" width="51.5" height="22"/>
+                                        <rect key="frame" x="137.5" y="30" width="47" height="20"/>
                                         <fontDescription key="fontDescription" name="IkanoSans-Bold" family="Ikano Sans" pointSize="17"/>
                                         <color key="textColor" red="0.20392156862745098" green="0.20784313725490194" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -390,6 +398,7 @@
                         <outlet property="answersContainerView" destination="G4J-1R-cVw" id="zBr-08-irR"/>
                         <outlet property="answersStackView" destination="UVC-wi-0k6" id="NlT-x3-s0Y"/>
                         <outlet property="inputContainerBottomConstraint" destination="JFK-Yh-hdo" id="7dQ-xc-6Cj"/>
+                        <outlet property="mikeButton" destination="Dph-Fz-0ln" id="7MI-pC-r1a"/>
                         <outlet property="sendButton" destination="kYQ-5k-kuM" id="k7J-kP-Wsu"/>
                         <outlet property="sendButtonWidthConstraint" destination="a9x-gd-ffB" id="TRX-vQ-lhS"/>
                         <outlet property="tableView" destination="8zt-83-Qtp" id="Bt9-4y-XT1"/>

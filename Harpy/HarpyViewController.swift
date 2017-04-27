@@ -8,6 +8,10 @@
 
 import UIKit
 import IBAnimatable
+import Speech
+import AVKit
+
+
 class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, BankIDActionDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var answersContainerView: UIView!
@@ -15,6 +19,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var textEditorBackground: UIView!
     @IBOutlet weak var textEditor: UITextField!
     @IBOutlet weak var titleHeader: UIView!
+    @IBOutlet weak var mikeButton: UIButton!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var sendButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputContainerBottomConstraint: NSLayoutConstraint!
@@ -28,7 +33,17 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     var apiService: APIAIService!
     
     var isWaitingForResponse = false
+    var isCurrentlyRecording = false
     var tapGestureRecognizor: UITapGestureRecognizer!
+    
+    // speech
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
+    private let audioEngine = AVAudioEngine()
+    var speechResult = SFSpeechRecognitionResult()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -56,7 +71,42 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         titleHeader.addSubview(blurEffectView)
         
         view.tintColor = UIColor.init(hexString: "EC0000")
+        
+        mikeButton.setTitle("🎤", for: .normal)
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+            // The callback may not be called on the main thread. Add an
+            // operation to the main queue to update the record button's state.
+            OperationQueue.main.addOperation {
+                var alertTitle = ""
+                var alertMsg = ""
+                
+                switch authStatus {
+                case .authorized:
+                    debugPrint("ready to record.")
+                    // authorized and ready to go
+                    
+                case .denied:
+                    alertTitle = "Speech recognizer not allowed"
+                    alertMsg = "You enable the recgnizer in Settings"
+                    
+                case .restricted, .notDetermined:
+                    alertTitle = "Could not start the speech recognizer"
+                    alertMsg = "Check your internect connection and try again"
+                    
+                }
+                if alertTitle != "" {
+                    let alert = UIAlertController(title: alertTitle, message: alertMsg, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
+                        self.dismiss(animated: true, completion: nil)
+                    }))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         if !hasBeenPresentedInitially{
@@ -81,6 +131,138 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    
+    
+    @IBAction func didTapMikeButton(_ sender: Any) {
+        if isCurrentlyRecording {
+            if (textEditor.text?.characters.count)! > 0 {
+                self.didPressSend(self.textEditor)
+                self.textEditor.text = ""
+            }
+            self.setMikeOff()
+        }
+        else {
+            setMikeOn()
+        }
+    }
+    
+    func setMikeOn() {
+        isCurrentlyRecording = true
+        mikeButton.setTitle("🛑", for: .normal)
+        textEditor.isEnabled = false
+        try! self.startRecording()
+    }
+    
+    func setMikeOff() {
+        isCurrentlyRecording = false
+        textEditor.isEnabled = true
+        mikeButton.setTitle("🎤", for: .normal)
+        stopRecordingAudio()
+    }
+    
+    func stopRecordingAudio() {
+    
+//         If the audio recording engine is running stop it and remove the SFSpeechRecognitionTask
+        if audioEngine.isRunning {
+            stopRecording()
+            checkForActionPhrases()
+        }
+    }
+    
+//    func timerEnded() {
+//        self.mikeButton.isEnabled = true
+//    }
+    
+    func stopRecording() {
+        audioEngine.stop()
+        recognitionRequest?.endAudio()
+        // Cancel the previous task if it's running
+        if let recognitionTask = recognitionTask {
+            recognitionTask.cancel()
+            self.recognitionTask = nil
+        }
+    }
+    
+    func checkForActionPhrases() {
+        
+        
+        var text = ""
+        for segment in speechResult.bestTranscription.segments {
+            // Don't search until the transcription size is at least
+            // the size of the shortest phrase
+            if segment.substringRange.location >= 5 {
+                // Separate segments to single words
+                text = speechResult.bestTranscription.formattedString
+            }
+        }
+        
+        textEditor.text = text
+        if text.characters.count > 0 {
+            self.didPressSend(self.textEditor)
+        }
+    }
+    
+    private func startRecording() throws {
+        if !audioEngine.isRunning {
+//        self.mikeButton.isEnabled = false
+//            let timer = Timer(timeInterval: 4.0, target: self, selector: #selector(HarpyViewController.timerEnded), userInfo: nil, repeats: false)
+//            RunLoop.current.add(timer, forMode: .commonModes)
+            
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(AVAudioSessionCategoryRecord)
+            try audioSession.setMode(AVAudioSessionModeMeasurement)
+            try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
+            
+            recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+            
+            guard let inputNode = audioEngine.inputNode else { fatalError("There was a problem with the audio engine") }
+            guard let recognitionRequest = recognitionRequest else { fatalError("Unable to create the recognition request") }
+            
+            // Configure request so that results are returned before audio recording is finished
+            recognitionRequest.shouldReportPartialResults = true
+            
+            // A recognition task is used for speech recognition sessions
+            // A reference for the task is saved so it can be cancelled
+            
+            recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
+                var isFinal = false
+                
+                if let result = result {
+                    print("result: \(result.isFinal)")
+                    isFinal = result.isFinal
+                    
+                    self.speechResult = result
+                    let text = result.bestTranscription.formattedString
+                    debugPrint(text)
+                    
+                }
+                
+                if error != nil || isFinal {
+                    self.audioEngine.stop()
+                    inputNode.removeTap(onBus: 0)
+                    
+                    self.recognitionRequest = nil
+                    self.recognitionTask = nil
+                    self.setMikeOff()
+                }
+            }
+            
+            let recordingFormat = inputNode.outputFormat(forBus: 0)
+            inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+                self.recognitionRequest?.append(buffer)
+            }
+            
+            print("Begin recording")
+            audioEngine.prepare()
+            try audioEngine.start()
+            
+//            textEditor.text = "Recording..."
+        }
+        
+    }
+
+    
     
     func openBankID() {
         UIApplication.shared.openURL(URL(string: "http://mayholm.com/bankid/mock")!)
@@ -302,4 +484,3 @@ extension HarpyViewController {
         })
     }
 }
-
