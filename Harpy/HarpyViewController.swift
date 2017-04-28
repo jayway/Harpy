@@ -318,14 +318,12 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                 self.view.setNeedsLayout()
                 self.view.layoutIfNeeded()
                 textEditor.isHidden = true
-                    self.dataSource.speakLastComment()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
                     self.scrollToBottom()
                 })
             }else{
                 self.dataSource.addNewCommentObject(comment: comment)
-                self.dataSource.speakLastComment()
             }
         }
     }

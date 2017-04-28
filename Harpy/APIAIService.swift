@@ -8,8 +8,12 @@
 
 import Foundation
 import ApiAI
+import Speech
+import AVKit
 
 class APIAIService{
+    
+    let synth = AVSpeechSynthesizer()
     
     init(){
         
@@ -29,8 +33,12 @@ class APIAIService{
                     var commentString = ""
                     if let message = params.message{
                         commentString = message
+                        if (commentString != "Unknown comment" ) {
+                            self.speakText(text: commentString)
+                        }
                     }
                     commentArray.append(Comment(date: Date(), commentString: commentString, isServerResponse: true, isBankIdRequest: params.isBankIdRequest, replies: params.replies))
+                    
                 }
                 DispatchQueue.main.async {
                     success(commentArray)
@@ -79,6 +87,15 @@ class APIAIService{
     }
     
     private func getMessageAndAction(json: [String:Any]){
+        
+    }
+    func speakText(text:String) {
+        debugPrint("About to speak text...")
+            debugPrint("text: \(text)")
+            //            if !synth.isSpeaking {
+            try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            let utterance = AVSpeechUtterance(string: text)
+            synth.speak(utterance)
         
     }
 }
