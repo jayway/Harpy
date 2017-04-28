@@ -420,6 +420,28 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         return dataSource.comments.count
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let comment = dataSource.comments[indexPath.row]
+        
+        if !comment.isServerResponse {
+            return
+        }
+        
+        let text = comment.commentString
+        let types: NSTextCheckingResult.CheckingType = .link
+            
+        let detector = try? NSDataDetector(types: types.rawValue)
+            
+        guard let detect = detector else {
+            return
+        }
+            
+        let matches = detect.matches(in: text!, options: .reportCompletion, range: NSMakeRange(0, (text?.characters.count)!))
+        if let match = matches.first {
+            UIApplication.shared.open(match.url!, options: [:], completionHandler: nil)
+        }
+   }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isWaitingForResponse && indexPath.row == dataSource.comments.count{
             let cell = tableView.dequeueReusableCell(withIdentifier: "Waiting", for: indexPath) as! WaitingTableViewCell
