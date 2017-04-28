@@ -14,6 +14,7 @@ import AVKit
 class APIAIService{
     
     let synth = AVSpeechSynthesizer()
+    var speak = false
     
     init(){
         
@@ -33,7 +34,7 @@ class APIAIService{
                     var commentString = ""
                     if let message = params.message{
                         commentString = message
-                        if (commentString != "Unknown comment" ) {
+                        if (commentString != "Unknown comment") {
                             self.speakText(text: commentString)
                         }
                     }
@@ -89,7 +90,11 @@ class APIAIService{
     private func getMessageAndAction(json: [String:Any]){
         
     }
+    
     func speakText(text:String) {
+        if (!speak) {
+            return
+        }
         debugPrint("About to speak text...")
             debugPrint("text: \(text)")
             //            if !synth.isSpeaking {

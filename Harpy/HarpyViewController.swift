@@ -23,6 +23,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var sendButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var inputContainerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var AudioButton: UIBarButtonItem!
     
     var ingvarView: IngvarView?
     var hasBeenPresentedInitially = false
@@ -106,7 +107,15 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         }
     }
     
-    
+    @IBAction func AudioTapped(_ sender: UIBarButtonItem) {
+        apiService.speak = !apiService.speak
+        if (apiService.speak) {
+            AudioButton.title = "🔈"
+        }
+        else {
+            AudioButton.title = "🔇"
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         if !hasBeenPresentedInitially{
