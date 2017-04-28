@@ -99,11 +99,25 @@ class APIAIService{
         if (!speak) {
             return
         }
+        let types: NSTextCheckingResult.CheckingType = .link
+        
+        let detector = try? NSDataDetector(types: types.rawValue)
+        
+        guard let detect = detector else { return }
+        
+        let matches = detect.matches(in: text, options: .reportCompletion, range: NSMakeRange(0, text.characters.count))
+        var textToSpeak = text
+        matches.forEach { (match) in
+            if  let url = match.url {
+                textToSpeak = textToSpeak.replacingOccurrences(of: url.absoluteString, with: "")
+            }
+        }
+        
         debugPrint("About to speak text...")
-            debugPrint("text: \(text)")
-            //            if !synth.isSpeaking {
+            debugPrint("text: \(textToSpeak)")
+        
             try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            let utterance = AVSpeechUtterance(string: text)
+            let utterance = AVSpeechUtterance(string: textToSpeak)
             synth.speak(utterance)
         
     }
