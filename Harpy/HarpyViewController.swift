@@ -427,21 +427,54 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             return
         }
         
-        let text = comment.commentString
-        let types: NSTextCheckingResult.CheckingType = .link
-            
-        let detector = try? NSDataDetector(types: types.rawValue)
-            
-        guard let detect = detector else {
-            return
+        var found = checkLinkInResponse(text: comment.commentString)
+        if (!found) {
+            found = checkPhoneNumberInResponse(text: comment.commentString)
         }
-            
-        let matches = detect.matches(in: text!, options: .reportCompletion, range: NSMakeRange(0, (text?.characters.count)!))
+    }
+    
+    private func checkLinkInResponse(text: String) -> Bool {
+        let types: NSTextCheckingResult.CheckingType = .link
+        
+        let detector = try? NSDataDetector(types: types.rawValue)
+        
+        guard let detect = detector else {
+            return false
+        }
+        
+        let matches = detect.matches(in: text, options: .reportCompletion, range: NSMakeRange(0, text.characters.count))
         if let match = matches.first {
             UIApplication.shared.open(match.url!, options: [:], completionHandler: nil)
+            return true
         }
-   }
+        
+        return false
+    }
     
+    private func checkPhoneNumberInResponse(text: String) -> Bool {
+        let types: NSTextCheckingResult.CheckingType = .phoneNumber
+        
+        let detector = try? NSDataDetector(types: types.rawValue)
+        
+        guard let detect = detector else {
+            return false
+        }
+        
+        let matches = detect.matches(in: text, options: .reportCompletion, range: NSMakeRange(0, text.characters.count))
+        if let match = matches.first {
+            var phoneNumber = match.phoneNumber!;
+            phoneNumber = phoneNumber.replacingOccurrences(of: " ", with: "")
+            if let url = URL(string:"telprompt://\(phoneNumber)") {
+                if (UIApplication.shared.canOpenURL(url)) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    return true
+                }
+            }
+        }
+        
+        return false
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isWaitingForResponse && indexPath.row == dataSource.comments.count{
             let cell = tableView.dequeueReusableCell(withIdentifier: "Waiting", for: indexPath) as! WaitingTableViewCell
