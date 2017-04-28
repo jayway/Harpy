@@ -49,6 +49,13 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8zt-83-Qtp">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="512"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Listening..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0f8-XX-LVm">
+                                    <rect key="frame" x="0.0" y="378" width="320" height="19.5"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentRight" id="qqK-6I-uoc" customClass="CommentTableViewCell" customModule="Harpy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="70"/>
@@ -319,13 +326,17 @@
                                 <rect key="frame" x="0.0" y="512" width="320" height="56"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dph-Fz-0ln">
-                                        <rect key="frame" x="8" y="11" width="30" height="34"/>
+                                        <rect key="frame" x="8" y="11" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="GZZ-07-Qky"/>
+                                            <constraint firstAttribute="width" constant="34" id="Jjf-6r-ARQ"/>
+                                        </constraints>
                                         <connections>
                                             <action selector="didTapMikeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rnQ-fk-Tlh"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Say something..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Byi-BF-agX">
-                                        <rect key="frame" x="46" y="0.0" width="250" height="56"/>
+                                        <rect key="frame" x="50" y="0.0" width="246" height="56"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="IkanoSans-Light" family="Ikano Sans" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -422,6 +433,7 @@
                         <outlet property="answersContainerView" destination="G4J-1R-cVw" id="zBr-08-irR"/>
                         <outlet property="answersStackView" destination="UVC-wi-0k6" id="NlT-x3-s0Y"/>
                         <outlet property="inputContainerBottomConstraint" destination="JFK-Yh-hdo" id="7dQ-xc-6Cj"/>
+                        <outlet property="listeningLabel" destination="0f8-XX-LVm" id="mNz-up-cyx"/>
                         <outlet property="mikeButton" destination="Dph-Fz-0ln" id="7MI-pC-r1a"/>
                         <outlet property="sendButton" destination="kYQ-5k-kuM" id="k7J-kP-Wsu"/>
                         <outlet property="sendButtonWidthConstraint" destination="a9x-gd-ffB" id="TRX-vQ-lhS"/>

@@ -17,6 +17,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     @IBOutlet weak var answersContainerView: UIView!
     @IBOutlet weak var answersStackView: AnimatableStackView!
     @IBOutlet weak var textEditorBackground: UIView!
+    @IBOutlet weak var listeningLabel: UILabel!
     @IBOutlet weak var textEditor: UITextField!
     @IBOutlet weak var titleHeader: UIView!
     @IBOutlet weak var mikeButton: UIButton!
@@ -73,6 +74,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         
         view.tintColor = UIColor.init(hexString: "EC0000")
         
+        listeningLabel.isHidden = true
         mikeButton.setTitle("🎤", for: .normal)
         SFSpeechRecognizer.requestAuthorization { authStatus in
             // The callback may not be called on the main thread. Add an
@@ -153,6 +155,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     func setMikeOn() {
         isCurrentlyRecording = true
+        listeningLabel.isHidden = false
         mikeButton.setTitle("🛑", for: .normal)
         textEditor.isEnabled = false
         try! self.startRecording()
@@ -160,6 +163,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     func setMikeOff() {
         isCurrentlyRecording = false
+        listeningLabel.isHidden = true
         textEditor.isEnabled = true
         mikeButton.setTitle("🎤", for: .normal)
         stopRecordingAudio()
