@@ -109,12 +109,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     
     @IBAction func AudioTapped(_ sender: UIBarButtonItem) {
         apiService.speak = !apiService.speak
-        if (apiService.speak) {
-            AudioButton.title = "🔈"
-        }
-        else {
-            AudioButton.title = "🔇"
-        }
+        AudioButton.title = apiService.speak ? "🔈" : "🔇"
     }
     
     override func viewWillAppear(_ animated: Bool) {
