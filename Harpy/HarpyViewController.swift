@@ -442,6 +442,11 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentLeft", for: indexPath) as! CommentTableViewCell
             cell.commentLabel.text = comment.commentString
             if indexPath.row > 0 {
+                if indexPath.row == dataSource.comments.count - 1 && dataSource.comments[indexPath.row].isDefaultFallback {
+                    // do a funky shake if bot didn't understand us
+                    cell.commentBackground.shake(repeatCount: 1)
+                    cell.commentLabel.shake(repeatCount: 1)
+                }
                 let previousComment = dataSource.comments[indexPath.row-1]
                 cell.topMargin.constant = previousComment.isServerResponse ? 0 : 16
             }

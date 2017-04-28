@@ -38,7 +38,7 @@ class APIAIService{
                             self.speakText(text: commentString)
                         }
                     }
-                    commentArray.append(Comment(date: Date(), commentString: commentString, isServerResponse: true, isBankIdRequest: params.isBankIdRequest, replies: params.replies))
+                    commentArray.append(Comment(date: Date(), commentString: commentString, isServerResponse: true, isBankIdRequest: params.isBankIdRequest, isDefaultFallback: params.isDefaultFallback, replies: params.replies))
                     
                 }
                 DispatchQueue.main.async {
@@ -52,15 +52,19 @@ class APIAIService{
         
     }
     
-    private func getParamsFromJSON(json: [String:Any]) -> [(message: String?, isBankIdRequest: Bool?, replies: [String]?)]{
+    private func getParamsFromJSON(json: [String:Any]) -> [(message: String?, isBankIdRequest: Bool?, isDefaultFallback: Bool?, replies: [String]?)]{
         var message: String?
         //TODO: get office
         var isBankIdRequest: Bool?
+        var isDefaultFallback: Bool?
         
         if let result = json["result"] as? [String:Any]{
+            if let action = result["action"] as? String? {
+                isDefaultFallback = action == "input.unknown"
+            }
             if let fulfillment = result["fulfillment"] as? [String:Any]{
                 if let messagesArray = fulfillment["messages"] as? [[String:Any]], messagesArray.count > 1{
-                    var returnArray = [(message: String?, isBankIdRequest: Bool?, replies: [String]?)]()
+                    var returnArray = [(message: String?, isBankIdRequest: Bool?, isDefaultFallback:Bool?, replies: [String]?)]()
                     for m in messagesArray{
                         var messageString = "Unknown comment"
                         var repliesArray: [String]?
@@ -70,7 +74,7 @@ class APIAIService{
                         if let replies = m["replies"] as? [String]{
                             repliesArray = replies
                         }
-                        returnArray.append((message: messageString, isBankIdRequest: false, replies: repliesArray))
+                        returnArray.append((message: messageString, isBankIdRequest: false, isDefaultFallback: isDefaultFallback, replies: repliesArray))
                     }
                     return returnArray
                 }else if let speech = fulfillment["speech"] as? String{
@@ -84,7 +88,7 @@ class APIAIService{
             }
 
         }
-        return [(message: message, isBankIdRequest: isBankIdRequest, replies: nil)]
+        return [(message: message, isBankIdRequest: isBankIdRequest, isDefaultFallback:isDefaultFallback, replies: nil)]
     }
     
     private func getMessageAndAction(json: [String:Any]){
