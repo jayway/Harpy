@@ -43,7 +43,7 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     var speechResult = SFSpeechRecognitionResult()
-
+    var latestSpeechString:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -175,7 +175,14 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
 //         If the audio recording engine is running stop it and remove the SFSpeechRecognitionTask
         if audioEngine.isRunning {
             stopRecording()
-            checkForActionPhrases()
+            if let text = latestSpeechString {
+                textEditor.text = text
+                if text.characters.count > 0 {
+                    self.didPressSend(self.textEditor)
+                    latestSpeechString = nil
+                }
+            }
+            //            checkForActionPhrases()
         }
     }
     
@@ -193,20 +200,6 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
         }
     }
     
-    func checkForActionPhrases() {
-        var text = ""
-        for segment in speechResult.bestTranscription.segments {
-            if segment.substringRange.location >= 2 {
-                // Separate segments to single words
-                text = speechResult.bestTranscription.formattedString
-            }
-        }
-        
-        textEditor.text = text
-        if text.characters.count > 0 {
-            self.didPressSend(self.textEditor)
-        }
-    }
     
     private func startRecording() throws {
         if !audioEngine.isRunning {
@@ -239,11 +232,13 @@ class HarpyViewController: UIViewController, UITextFieldDelegate, UITableViewDat
                     
                     self.speechResult = result
                     let text = result.bestTranscription.formattedString
+                    self.latestSpeechString = text
                     debugPrint(text)
                     
                 }
                 
                 if error != nil || isFinal {
+                    debugPrint("Stopping recording. isFinal=\(isFinal). Error=\(error!)")
                     self.audioEngine.stop()
                     inputNode.removeTap(onBus: 0)
                     
