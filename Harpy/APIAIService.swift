@@ -82,7 +82,7 @@ class APIAIService{
                 }
             }
             if let action = result["action"] as? String{
-                if action == "bankid_block" {
+                if action == "bankid_block" || action == "disable-payments-abroad"  || action == "enable_payments_abroad" {
                     isBankIdRequest = true
                 }
             }
